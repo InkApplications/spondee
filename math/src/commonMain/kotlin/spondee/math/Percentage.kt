@@ -1,4 +1,4 @@
-package sik.math
+package spondee.math
 
 /**
  * Represents a percentage value.

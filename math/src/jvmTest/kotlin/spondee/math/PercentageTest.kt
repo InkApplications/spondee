@@ -1,4 +1,4 @@
-package sik.math
+package spondee.math
 
 import org.junit.Test
 import kotlin.test.assertEquals
