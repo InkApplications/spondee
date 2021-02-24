@@ -26,37 +26,11 @@ data class Percentage(val value: Double): Number() {
     operator fun times(other: Number): Double = asFraction().times(other.toDouble())
     operator fun div(other: Number): Double = asFraction().div(other.toDouble())
     operator fun rem(other: Number) = asFraction().rem(other.toDouble())
-
-    operator fun plus(other: Byte): Percentage = copy(value = value.plus(other))
-    operator fun plus(other: Char): Percentage = copy(value = value.plus(other.toInt()))
-    operator fun plus(other: Double): Percentage = copy(value = value.plus(other))
-    operator fun plus(other: Float): Percentage = copy(value = value.plus(other))
-    operator fun plus(other: Int): Percentage = copy(value = value.plus(other))
-    operator fun plus(other: Long): Percentage = copy(value = value.plus(other))
-    operator fun plus(other: Short): Percentage = copy(value = value.plus(other))
     operator fun plus(other: Number): Percentage = copy(value = value.plus(other.toDouble()))
-
-    operator fun minus(other: Byte): Percentage = copy(value = value.minus(other))
-    operator fun minus(other: Char): Percentage = copy(value = value.minus(other.toInt()))
-    operator fun minus(other: Double): Percentage = copy(value = value.minus(other))
-    operator fun minus(other: Float): Percentage = copy(value = value.minus(other))
-    operator fun minus(other: Int): Percentage = copy(value = value.minus(other))
-    operator fun minus(other: Long): Percentage = copy(value = value.minus(other))
-    operator fun minus(other: Short): Percentage = copy(value = value.minus(other))
     operator fun minus(other: Number): Percentage = copy(value = value.minus(other.toDouble()))
-
-    operator fun compareTo(other: Byte): Int = value.compareTo(other)
-    operator fun compareTo(other: Char): Int = value.compareTo(other.toInt())
-    operator fun compareTo(other: Double): Int = value.compareTo(other)
-    operator fun compareTo(other: Float): Int = value.compareTo(other)
-    operator fun compareTo(other: Int): Int = value.compareTo(other)
-    operator fun compareTo(other: Long): Int = value.compareTo(other)
-    operator fun compareTo(other: Short): Int = value.compareTo(other)
     operator fun compareTo(other: Number): Int = value.compareTo(other.toDouble())
-
     operator fun unaryPlus() = this
     operator fun unaryMinus() = copy(value = -value)
-
     operator fun inc() = plus(1)
     operator fun dec() = minus(1)
 
