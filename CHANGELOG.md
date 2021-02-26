@@ -7,3 +7,4 @@ Changes
 ### Added
 
  - `Percentage` Unit
+ - `Level` Unit
