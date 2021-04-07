@@ -1,4 +1,4 @@
-package spondee.measures
+package inkapplications.spondee.measures
 
 import org.junit.Test
 import kotlin.test.assertEquals

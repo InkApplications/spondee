@@ -1,4 +1,4 @@
-package spondee.math
+package inkapplications.spondee.math
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

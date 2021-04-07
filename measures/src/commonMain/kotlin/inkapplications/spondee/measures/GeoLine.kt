@@ -1,4 +1,4 @@
-package spondee.measures
+package inkapplications.spondee.measures
 
 import kotlin.math.abs
 
