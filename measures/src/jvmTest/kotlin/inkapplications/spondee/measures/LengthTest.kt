@@ -1,5 +1,6 @@
 package inkapplications.spondee.measures
 
+import kotlin.math.ulp
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
@@ -101,9 +102,5 @@ class LengthTest {
             assertEquals(12000.0, inMeters, 0.1)
             assertEquals(12.0, inKilometers, 0.1)
         }
-    }
-
-    private fun assertEquals(expected: Double, actual: Double, delta: Double) {
-        assertTrue(expected - actual < delta, "Expected <$expected> to be within <$delta> of <$actual>")
     }
 }
