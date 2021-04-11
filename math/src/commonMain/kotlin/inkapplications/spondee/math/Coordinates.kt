@@ -6,4 +6,6 @@ package inkapplications.spondee.math
 data class Coordinates(
     val x: Number,
     val y: Number,
-)
+) {
+    override fun toString(): String = "x: $x y: $y"
+}
