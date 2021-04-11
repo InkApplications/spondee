@@ -18,26 +18,7 @@ interface Temperature {
      * Get the value as a Celsius degree.
      */
     val inCelsius: Double
-
-    /**
-     * Get the value as a micro-reciprocal degree.
-     */
-    val inMireds: Double get() = 1_000_000 / inKelvin
 }
-
-/**
- * Reciprocal Kelvin Degrees
- */
-data class Mireds(override val inMireds: Double): Temperature {
-    override val inKelvin: Double get() = 1_000_000 / inMireds
-    override val inFahrenheit: Double get() = inKelvin * (9.0/5.0) - 459.67
-    override val inCelsius: Double get() = inKelvin - 273.15
-}
-
-/**
- * Express a temperature in reciprocal Kelvin degrees
- */
-val Number.mireds get() = Mireds(toDouble())
 
 /**
  * SI Standard Unit of Temperature
