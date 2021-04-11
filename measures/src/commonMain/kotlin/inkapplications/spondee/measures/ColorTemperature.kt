@@ -23,7 +23,7 @@ interface ColorTemperature {
 /**
  * Reciprocal Degree Color Temperature Unit.
  */
-data class MiredColorTemperature(
+internal data class MiredColorTemperature(
     override val inMireds: Double,
 ): ColorTemperature {
     override val inKelvin get() = 1_000_000 / inMireds
@@ -33,7 +33,7 @@ data class MiredColorTemperature(
 /**
  * Express a number as Mired units.
  */
-val Number.mireds get() = MiredColorTemperature(toDouble())
+val Number.mireds: ColorTemperature get() = MiredColorTemperature(toDouble())
 
 /**
  * Temperature Unit Based Color Temperature.
@@ -41,7 +41,7 @@ val Number.mireds get() = MiredColorTemperature(toDouble())
  * This is universally measured in degrees Kelvin, but could be any unit
  * of temperature.
  */
-data class StandardColorTemperature(
+internal data class StandardColorTemperature(
     override val asTemperature: Temperature,
 ): ColorTemperature {
     override val inKelvin: Double get() = asTemperature.inKelvin
@@ -53,7 +53,7 @@ data class StandardColorTemperature(
  *
  * Typically used for converting Kelvin to a color temperature.
  */
-val Temperature.asColorTemperature get() = StandardColorTemperature(this)
+val Temperature.asColorTemperature: ColorTemperature get() = StandardColorTemperature(this)
 
 
 

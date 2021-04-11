@@ -23,7 +23,7 @@ interface Temperature {
 /**
  * SI Standard Unit of Temperature
  */
-data class Kelvin(override val inKelvin: Double): Temperature {
+internal data class Kelvin(override val inKelvin: Double): Temperature {
     override val inFahrenheit: Double get() = inKelvin * (9.0/5.0) - 459.67
     override val inCelsius: Double get() = inKelvin - 273.15
 }
@@ -31,14 +31,14 @@ data class Kelvin(override val inKelvin: Double): Temperature {
 /**
  * Express a temperature in Kelvin degrees
  */
-val Number.kelvin get() = Kelvin(toDouble())
+val Number.kelvin: Temperature get() = Kelvin(toDouble())
 
 /**
  * Fahrenheit Degrees
  *
  * This is a wonderful unit of measurement.
  */
-data class Fahrenheit(override val inFahrenheit: Double): Temperature {
+internal data class Fahrenheit(override val inFahrenheit: Double): Temperature {
     override val inKelvin: Double get() = ((inFahrenheit - 32.0) / 1.8) + 273.15
     override val inCelsius: Double get() = (inFahrenheit - 32.0) * (5.0/9.0)
 }
@@ -46,14 +46,14 @@ data class Fahrenheit(override val inFahrenheit: Double): Temperature {
 /**
  * Express a number in Fahrenheit degrees.
  */
-val Number.fahrenheit get() = Fahrenheit(toDouble())
+val Number.fahrenheit: Temperature get() = Fahrenheit(toDouble())
 
 /**
  * Celsius Degrees
  *
  * A truly silly unit of measurement.
  */
-data class Celsius(override val inCelsius: Double): Temperature {
+internal data class Celsius(override val inCelsius: Double): Temperature {
     override val inKelvin: Double get() = inCelsius + 273.15
     override val inFahrenheit: Double get() = inCelsius * (9.0/5.0) + 32
 }
@@ -61,4 +61,4 @@ data class Celsius(override val inCelsius: Double): Temperature {
 /**
  * Express a number as Celsius degrees.
  */
-val Number.celsius get() = Celsius(toDouble())
+val Number.celsius: Temperature get() = Celsius(toDouble())
