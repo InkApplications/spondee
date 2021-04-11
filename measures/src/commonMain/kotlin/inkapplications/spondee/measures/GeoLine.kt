@@ -8,67 +8,124 @@ import kotlin.math.abs
  * This can be expressed as a decimal as part of Lat/Lng lookups
  * or as degrees/minutes/seconds and a Cardinal.
  */
-sealed class GeoLine(
-    private val decimal: Double
-): Number() {
-    val degrees: Int = abs(decimal.toInt())
-    val minutes: Int = ((abs(decimal) - degrees) * 60).toInt()
-    val seconds: Float = ((abs(decimal) - degrees - (minutes / 60.0)) * 3600).toFloat()
+sealed class GeoLine {
+    abstract val asDecimal: Double
+    abstract val degreesComponent: Int
+    abstract val minutesComponent: Int
+    abstract val secondsComponent: Float
     abstract val cardinal: Cardinal
 
-    override fun toByte(): Byte = decimal.toInt().toByte()
-    override fun toChar(): Char = decimal.toChar()
-    override fun toDouble(): Double = decimal
-    override fun toFloat(): Float = decimal.toFloat()
-    override fun toInt(): Int = decimal.toInt()
-    override fun toLong(): Long = decimal.toLong()
-    override fun toShort(): Short = decimal.toInt().toShort()
+    protected val Double.degreesComponent get() = abs(toInt())
+    protected val Double.minutesComponent get() = ((abs(this) - degreesComponent) * 60).toInt()
+    protected val Double.secondsComponent get() = ((abs(this) - degreesComponent - (minutesComponent / 60.0)) * 3600).toFloat()
+    protected fun toDecimal(
+        degrees: Int,
+        minutes: Int,
+        seconds: Float,
+        cardinal: Cardinal,
+    ) = (degrees.toDouble() + (minutes.toDouble() / 60.0) + (seconds / 3600.0)) * cardinal.decimalSign
 }
-
-/**
- * Convert degrees notation to a decimal.
- */
-private fun toDecimal(
-    degrees: Int,
-    minutes: Int,
-    seconds: Float,
-    cardinal: Cardinal,
-) = (degrees.toDouble() + (minutes.toDouble() / 60.0) + (seconds / 3600.0)) * cardinal.decimalSign
 
 /**
  * Latitude/parallel position of a coordinate.
  */
-data class Latitude(val decimal: Double): GeoLine(decimal) {
-    constructor(
-        degrees: Int,
-        minutes: Int,
-        seconds: Float,
-        cardinal: Cardinal,
-    ): this(toDecimal(degrees, minutes, seconds, cardinal))
-
-    override val cardinal: Cardinal = if (decimal > 0) Cardinal.North else Cardinal.South
-}
+abstract class Latitude: GeoLine()
 
 /**
  * Longitude/meridian position of a coordinate.
  */
-data class Longitude(val decimal: Double): GeoLine(decimal) {
-    constructor(
-        degrees: Int,
-        minutes: Int,
-        seconds: Float,
-        cardinal: Cardinal,
-    ): this(toDecimal(degrees, minutes, seconds, cardinal))
+abstract class Longitude: GeoLine()
 
-    override val cardinal: Cardinal = if (decimal > 0) Cardinal.East else Cardinal.West
+internal data class DecimalLatitude(override val asDecimal: Double): Latitude() {
+    override val degreesComponent: Int get() = asDecimal.degreesComponent
+    override val minutesComponent: Int get() = asDecimal.minutesComponent
+    override val secondsComponent: Float get() = asDecimal.secondsComponent
+    override val cardinal: Cardinal get() = if (asDecimal > 0) Cardinal.North else Cardinal.South
+}
+
+internal data class DecimalLongitude(override val asDecimal: Double): Longitude() {
+    override val degreesComponent: Int get() = asDecimal.degreesComponent
+    override val minutesComponent: Int get() = asDecimal.minutesComponent
+    override val secondsComponent: Float get() = asDecimal.secondsComponent
+    override val cardinal: Cardinal get() = if (asDecimal > 0) Cardinal.East else Cardinal.West
+}
+
+internal data class DmsLatitude(
+    override val degreesComponent: Int,
+    override val minutesComponent: Int,
+    override val secondsComponent: Float,
+    override val cardinal: Cardinal,
+): Latitude() {
+    override val asDecimal: Double get() = toDecimal(
+        degrees = degreesComponent,
+        minutes = minutesComponent,
+        seconds = secondsComponent,
+        cardinal = cardinal,
+    )
+}
+internal data class DmsLongitude(
+    override val degreesComponent: Int,
+    override val minutesComponent: Int,
+    override val secondsComponent: Float,
+    override val cardinal: Cardinal,
+): Longitude() {
+    override val asDecimal: Double get() = toDecimal(
+        degrees = degreesComponent,
+        minutes = minutesComponent,
+        seconds = secondsComponent,
+        cardinal = cardinal,
+    )
 }
 
 /**
  * Express a latitude line from decimal degrees.
  */
-val Number.latitude get() = Latitude(toDouble())
+val Number.latitude: Latitude get() = DecimalLatitude(toDouble())
 
 /**
  * Express a longitude line from decimal degrees.
  */
-val Number.longitude get() = Latitude(toDouble())
+val Number.longitude: Longitude get() = DecimalLongitude(toDouble())
+
+/**
+ * Create a geoline from a degrees/minutes/seconds and cardinal
+ */
+fun geoLineOf(
+    degreesComponent: Int,
+    minutesComponent: Int,
+    secondsComponent: Float,
+    cardinal: Cardinal,
+): GeoLine = when (cardinal) {
+    Cardinal.North, Cardinal.South -> DmsLatitude(degreesComponent, minutesComponent, secondsComponent, cardinal)
+    Cardinal.East, Cardinal.West -> DmsLongitude(degreesComponent, minutesComponent, secondsComponent, cardinal)
+}
+
+/**
+ * Create a latitude from a degrees/minutes/seconds and a cardinal.
+ *
+ * @see latitude to convert a decimal format instead.
+ */
+fun latitudeOf(
+    degreesComponent: Int,
+    minutesComponent: Int,
+    secondsComponent: Float,
+    cardinal: Cardinal,
+): Latitude = when (cardinal) {
+    Cardinal.North, Cardinal.South -> DmsLatitude(degreesComponent, minutesComponent, secondsComponent, cardinal)
+    Cardinal.East, Cardinal.West -> throw IllegalArgumentException("Cardinal <$cardinal> is invalid for a latitude line")
+}
+
+/**
+ * Create a logitude from a degrees/minutes/seconds and a cardinal.
+ *
+ * @see longitude to convert a decimal format instead.
+ */
+fun longitudeOf(
+    degreesComponent: Int,
+    minutesComponent: Int,
+    secondsComponent: Float,
+    cardinal: Cardinal,
+): Longitude = when (cardinal) {
+    Cardinal.North, Cardinal.South -> throw IllegalArgumentException("Cardinal <$cardinal> is invalid for a longitude line")
+    Cardinal.East, Cardinal.West -> DmsLongitude(degreesComponent, minutesComponent, secondsComponent, cardinal)
+}
