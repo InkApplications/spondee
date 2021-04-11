@@ -6,9 +6,8 @@ import kotlin.test.assertEquals
 class LevelTest {
     @Test
     fun conversions() {
-        assertEquals(1.bels, 10.decibels)
-        assertEquals(10.0, 1.bels.decibels)
-        assertEquals(1.0, 10.decibels.toDouble())
+        assertEquals(10.0, 1.bels.asDecibels)
+        assertEquals(1.0, 10.decibels.asBels)
     }
 
     @Test
@@ -24,6 +23,9 @@ class LevelTest {
 
     @Test
     fun string() {
-        assertEquals("12.0dB", 1.2.bels.toString())
+        assertEquals("+1.2B", 1.2.bels.toString())
+        assertEquals("+12.0dB", 12.decibels.toString())
+        assertEquals("-1.2B", (-1.2).bels.toString())
+        assertEquals("-12.0dB", (-12).decibels.toString())
     }
 }

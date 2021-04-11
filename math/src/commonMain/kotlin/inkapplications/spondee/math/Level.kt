@@ -1,32 +1,60 @@
 package inkapplications.spondee.math
 
+import kotlin.math.absoluteValue
 import kotlin.math.pow
 
 /**
  * Unit of a ratio. Most commonly decibels.
  */
-data class Level(val bels: Double): Number() {
-    val decibels get() = bels * 10
+interface Level {
+    /**
+     * Express the level as a value in Bels.
+     */
+    val asBels: Double
 
-    override fun toByte(): Byte = bels.toInt().toByte()
-    override fun toChar(): Char = bels.toChar()
-    override fun toDouble(): Double = bels
-    override fun toFloat(): Float = bels.toFloat()
-    override fun toInt(): Int = bels.toInt()
-    override fun toLong(): Long = bels.toLong()
-    override fun toShort(): Short = bels.toInt().toShort()
+    /**
+     * Express the level as a value in Decibels.
+     */
+    val asDecibels: Double
 
-    operator fun times(other: Number): Double = 10.0.pow(bels).times(other.toDouble())
-    operator fun plus(other: Level): Level = Level(bels + other.bels)
-    override fun toString(): String = "${decibels}dB"
+    /**
+     * +/- symbol for the level modifier.
+     */
+    val symbol: Char
+
+    operator fun times(other: Number): Double
+    operator fun plus(other: Level): Level
+    operator fun unaryMinus(): Level
+    operator fun unaryPlus(): Level = this
+}
+
+internal data class Bels(override val asBels: Double): Level {
+    override val asDecibels get() = asBels * 10
+    override val symbol: Char get() = if (asBels >= 0) '+' else '-'
+
+    override operator fun times(other: Number): Double = 10.0.pow(asBels).times(other.toDouble())
+    override operator fun plus(other: Level): Level = Bels(asBels + other.asBels)
+    override fun unaryMinus() = Bels(-asBels)
+
+    override fun toString(): String = "$symbol${asBels.absoluteValue}B"
+}
+
+internal data class Decibels(override val asDecibels: Double): Level {
+    override val asBels get() = asDecibels / 10
+    override val symbol: Char get() = if (asDecibels >= 0) '+' else '-'
+
+    override operator fun times(other: Number): Double = 10.0.pow(asBels).times(other.toDouble())
+    override operator fun plus(other: Level): Level = Bels(asBels + other.asBels)
+    override fun unaryMinus() = Bels(-asDecibels)
+    override fun toString(): String = "$symbol${asDecibels.absoluteValue}dB"
 }
 
 /**
  * Express a level in bels.
  */
-val Number.bels get() = Level(toDouble())
+val Number.bels: Level get() = Bels(toDouble())
 
 /**
  * Express a level in decibels.
  */
-val Number.decibels get() = (toDouble() / 10).bels
+val Number.decibels: Level get() = Decibels(toDouble())
