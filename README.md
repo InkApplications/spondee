@@ -34,8 +34,8 @@ Design Rules
 Here are some rules that are followed on this project. If you contribute,
 please follow them.
 
- - All units are data classes.
- - All units with a single backing field should extend `Number`
+ - Units should be data classes
+     - (These will eventually all be migrated to `value class` when stable)
  - All ambiguous math is done with the `Double` type
  - Direct wrapping is done with value extensions. (eg. `55.percent`)
 
