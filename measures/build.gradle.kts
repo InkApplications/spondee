@@ -5,10 +5,7 @@ plugins {
 
 kotlin {
     jvm()
-    js {
-        browser()
-        nodejs()
-    }
+    js()
 
     sourceSets {
         val jvmTest by getting {
