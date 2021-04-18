@@ -2,37 +2,32 @@ package inkapplications.spondee.math
 
 /**
  * Represents a percentage value.
- *
- * This uses a double whole digit representation of the percentage to
- * make operations involving percentages more clear.
- *
- * @see Number.percent to create a percentage from a while number (ex. `55`)
- * @see Float.toPercentage to create a percentage from a fractional value (ex. `.55F`)
- * @see Double.toPercentage to create a percentage from a fractional value (ex. `.55`)
  */
-data class Percentage(val value: Double): Number() {
+interface Percentage {
     /**
-     * Get the percentage as a fractional decimal instead of a whole number.
+     * Express the percentage as a fractional value.
+     *
+     * ie. 50% will be `0.5`
      */
-    fun asFraction(): Double = value / 100
+    val fraction: Double
 
-    override fun toByte(): Byte = value.toInt().toByte()
-    override fun toChar(): Char = value.toChar()
-    override fun toDouble(): Double = value
-    override fun toFloat(): Float = value.toFloat()
-    override fun toInt(): Int = value.toInt()
-    override fun toLong(): Long = value.toLong()
-    override fun toShort(): Short = value.toInt().toShort()
-    operator fun times(other: Number): Double = asFraction().times(other.toDouble())
-    operator fun div(other: Number): Double = asFraction().div(other.toDouble())
-    operator fun rem(other: Number) = asFraction().rem(other.toDouble())
-    operator fun plus(other: Number): Percentage = copy(value = value.plus(other.toDouble()))
-    operator fun minus(other: Number): Percentage = copy(value = value.minus(other.toDouble()))
-    operator fun compareTo(other: Number): Int = value.compareTo(other.toDouble())
-    operator fun unaryPlus() = this
-    operator fun unaryMinus() = copy(value = -value)
-    operator fun inc() = plus(1)
-    operator fun dec() = minus(1)
+    /**
+     * Express the percentage as a whole value.
+     *
+     * ie. 50% will be `50.0`
+     */
+    val whole: Double
+
+    operator fun times(other: Number): Double = fraction.times(other.toDouble())
+    operator fun div(other: Number): Double = fraction.div(other.toDouble())
+    operator fun rem(other: Number) = fraction.rem(other.toDouble())
+    operator fun plus(other: Percentage): Percentage
+    operator fun minus(other: Percentage): Percentage
+    operator fun compareTo(other: Percentage): Int
+    operator fun unaryPlus(): Percentage = this
+    operator fun unaryMinus(): Percentage
+    operator fun inc(): Percentage = plus(1.percent)
+    operator fun dec(): Percentage = minus(1.percent)
 
     /**
      * Shorthand readable syntax for multiplying.
@@ -41,8 +36,37 @@ data class Percentage(val value: Double): Number() {
      *     50.percent of 100
      */
     infix fun of(other: Number) = times(other)
+}
 
-    override fun toString(): String = "$value%"
+/**
+ * Store a percentage as a fractional backed value.
+ */
+internal data class FractionalPercentage(override val fraction: Double): Percentage {
+    override val whole: Double get() = fraction * 100
+
+    override operator fun plus(other: Percentage): Percentage = FractionalPercentage(fraction + other.fraction)
+    override operator fun minus(other: Percentage): Percentage = FractionalPercentage(fraction - other.fraction)
+    override operator fun compareTo(other: Percentage): Int = fraction.compareTo(other.fraction)
+    override operator fun unaryMinus() = FractionalPercentage(-fraction)
+
+    override fun toString(): String = "$whole%"
+}
+
+/**
+ * Store a percentage as a whole backed value.
+ *
+ * This is fairly equivalent to a [FractionalPercentage] but allows us to not
+ * modify the value at all.
+ */
+internal data class WholePercentage(override val whole: Double): Percentage {
+    override val fraction: Double get() = whole / 100
+
+    override operator fun plus(other: Percentage): Percentage = WholePercentage(whole + other.whole)
+    override operator fun minus(other: Percentage): Percentage = WholePercentage(whole - other.whole)
+    override operator fun compareTo(other: Percentage): Int = whole.compareTo(other.whole)
+    override operator fun unaryMinus() = WholePercentage(-whole)
+
+    override fun toString(): String = "$whole%"
 }
 
 /**
@@ -51,9 +75,9 @@ data class Percentage(val value: Double): Number() {
  * This is a whole number, not a fraction!
  * ex. `55.percent` is 55% or 0.55
  *
- * @see toPercentage to convert a fractional value such as `.55`
+ * @see asPercentage to convert a fractional value such as `.55`
  */
-val Number.percent: Percentage get() = Percentage(toDouble())
+val Number.percent: Percentage get() = WholePercentage(toDouble())
 
 /**
  * Express with a fractional percentage.
@@ -63,7 +87,7 @@ val Number.percent: Percentage get() = Percentage(toDouble())
  *
  * @see percent to convert a whole percentage value.
  */
-fun Float.toPercentage(): Percentage = (toDouble() * 100).percent
+val Float.asPercentage: Percentage get() = FractionalPercentage(toDouble())
 
 /**
  * Express with a fractional percentage.
@@ -73,4 +97,4 @@ fun Float.toPercentage(): Percentage = (toDouble() * 100).percent
  *
  * @see percent to convert a whole percentage value.
  */
-fun Double.toPercentage(): Percentage = (toDouble() * 100).percent
+val Double.asPercentage: Percentage get() = FractionalPercentage(this)
