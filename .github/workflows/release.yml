@@ -34,7 +34,7 @@ jobs:
                 name: Archive
                 uses: actions/upload-artifact@v2
                 with:
-                    name: Maven Publications
+                    name: Common Publications
                     path: build/distributions/publications.zip
     linux:
         runs-on: ubuntu-latest
@@ -61,7 +61,7 @@ jobs:
                 name: Archive
                 uses: actions/upload-artifact@v2
                 with:
-                    name: Maven Publications
+                    name: Linux Publications
                     path: build/distributions/publications.zip
     windows:
         runs-on: windows-latest
@@ -79,7 +79,7 @@ jobs:
                 name: Archive
                 uses: actions/upload-artifact@v2
                 with:
-                    name: Maven Publications
+                    name: Windows Publications
                     path: build/distributions/publications.zip
     macos:
         runs-on: macos-latest
@@ -97,5 +97,5 @@ jobs:
                 name: Archive
                 uses: actions/upload-artifact@v2
                 with:
-                    name: Maven Publications
+                    name: MacOS Publications
                     path: build/distributions/publications.zip
