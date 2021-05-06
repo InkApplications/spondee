@@ -7,5 +7,5 @@ data class Coordinates(
     val x: Number,
     val y: Number,
 ) {
-    override fun toString(): String = "x: $x y: $y"
+    override fun toString(): String = "[$x, $y]"
 }

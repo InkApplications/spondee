@@ -29,6 +29,7 @@ interface Temperature {
 internal value class Kelvin(override val inKelvin: Double): Temperature {
     override val inFahrenheit: Double get() = inKelvin * (9.0/5.0) - 459.67
     override val inCelsius: Double get() = inKelvin - 273.15
+    override fun toString(): String = "${inKelvin}K"
 }
 
 /**
@@ -45,6 +46,7 @@ val Number.kelvin: Temperature get() = Kelvin(toDouble())
 internal value class Fahrenheit(override val inFahrenheit: Double): Temperature {
     override val inKelvin: Double get() = ((inFahrenheit - 32.0) / 1.8) + 273.15
     override val inCelsius: Double get() = (inFahrenheit - 32.0) * (5.0/9.0)
+    override fun toString(): String = "${inKelvin}ºF"
 }
 
 /**
@@ -61,6 +63,7 @@ val Number.fahrenheit: Temperature get() = Fahrenheit(toDouble())
 internal value class Celsius(override val inCelsius: Double): Temperature {
     override val inKelvin: Double get() = inCelsius + 273.15
     override val inFahrenheit: Double get() = inCelsius * (9.0/5.0) + 32
+    override fun toString(): String = "${inKelvin}ºC"
 }
 
 /**

@@ -31,6 +31,7 @@ internal value class MiredColorTemperature(
 ): ColorTemperature {
     override val inKelvin get() = 1_000_000 / inMireds
     override val asTemperature get() = inKelvin.kelvin
+    override fun toString(): String = "${inMireds}MK^−1"
 }
 
 /**
@@ -50,6 +51,7 @@ internal value class StandardColorTemperature(
 ): ColorTemperature {
     override val inKelvin: Double get() = asTemperature.inKelvin
     override val inMireds: Double get() = 1_000_000 / inKelvin
+    override fun toString(): String = asTemperature.toString()
 }
 
 /**

@@ -43,6 +43,7 @@ internal value class DecimalLatitude(override val asDecimal: Double): Latitude {
     override val minutesComponent: Int get() = asDecimal.minutesComponent
     override val secondsComponent: Float get() = asDecimal.secondsComponent
     override val cardinal: Cardinal get() = if (asDecimal > 0) Cardinal.North else Cardinal.South
+    override fun toString(): String = asDecimal.toString()
 }
 
 @JvmInline
@@ -51,6 +52,7 @@ internal value class DecimalLongitude(override val asDecimal: Double): Longitude
     override val minutesComponent: Int get() = asDecimal.minutesComponent
     override val secondsComponent: Float get() = asDecimal.secondsComponent
     override val cardinal: Cardinal get() = if (asDecimal > 0) Cardinal.East else Cardinal.West
+    override fun toString(): String = asDecimal.toString()
 }
 
 internal data class DmsLatitude(
@@ -65,6 +67,7 @@ internal data class DmsLatitude(
         seconds = secondsComponent,
         cardinal = cardinal,
     )
+    override fun toString(): String = "${degreesComponent}º${minutesComponent}\"${secondsComponent}'${cardinal}"
 }
 internal data class DmsLongitude(
     override val degreesComponent: Int,
@@ -78,6 +81,7 @@ internal data class DmsLongitude(
         seconds = secondsComponent,
         cardinal = cardinal,
     )
+    override fun toString(): String = "${degreesComponent}º${minutesComponent}\"${secondsComponent}'${cardinal}"
 }
 
 /**
