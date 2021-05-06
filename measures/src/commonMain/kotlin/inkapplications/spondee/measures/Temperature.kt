@@ -1,5 +1,7 @@
 package inkapplications.spondee.measures
 
+import kotlin.jvm.JvmInline
+
 /**
  * Represents a Temperature value.
  */
@@ -23,7 +25,8 @@ interface Temperature {
 /**
  * SI Standard Unit of Temperature
  */
-internal data class Kelvin(override val inKelvin: Double): Temperature {
+@JvmInline
+internal value class Kelvin(override val inKelvin: Double): Temperature {
     override val inFahrenheit: Double get() = inKelvin * (9.0/5.0) - 459.67
     override val inCelsius: Double get() = inKelvin - 273.15
 }
@@ -38,7 +41,8 @@ val Number.kelvin: Temperature get() = Kelvin(toDouble())
  *
  * This is a wonderful unit of measurement.
  */
-internal data class Fahrenheit(override val inFahrenheit: Double): Temperature {
+@JvmInline
+internal value class Fahrenheit(override val inFahrenheit: Double): Temperature {
     override val inKelvin: Double get() = ((inFahrenheit - 32.0) / 1.8) + 273.15
     override val inCelsius: Double get() = (inFahrenheit - 32.0) * (5.0/9.0)
 }
@@ -53,7 +57,8 @@ val Number.fahrenheit: Temperature get() = Fahrenheit(toDouble())
  *
  * A truly silly unit of measurement.
  */
-internal data class Celsius(override val inCelsius: Double): Temperature {
+@JvmInline
+internal value class Celsius(override val inCelsius: Double): Temperature {
     override val inKelvin: Double get() = inCelsius + 273.15
     override val inFahrenheit: Double get() = inCelsius * (9.0/5.0) + 32
 }

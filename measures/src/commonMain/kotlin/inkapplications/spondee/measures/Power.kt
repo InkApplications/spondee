@@ -1,5 +1,7 @@
 package inkapplications.spondee.measures
 
+import kotlin.jvm.JvmInline
+
 /**
  * Unit of energy per unit time
  */
@@ -21,7 +23,8 @@ interface Power {
 /**
  * SI Unit of Power.
  */
-internal data class Watts(override val inWatts: Double): Power {
+@JvmInline
+internal value class Watts(override val inWatts: Double): Power {
     override fun compareTo(other: Power) = inWatts.compareTo(other.inWatts)
     override fun plus(other: Power): Power = Watts(inWatts + other.inWatts)
     override fun minus(other: Power): Power = Watts(inWatts - other.inWatts)

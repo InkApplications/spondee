@@ -1,5 +1,7 @@
 package inkapplications.spondee.measures
 
+import kotlin.jvm.JvmInline
+
 /**
  * Lighting Color Temperature Unit.
  */
@@ -23,7 +25,8 @@ interface ColorTemperature {
 /**
  * Reciprocal Degree Color Temperature Unit.
  */
-internal data class MiredColorTemperature(
+@JvmInline
+internal value class MiredColorTemperature(
     override val inMireds: Double,
 ): ColorTemperature {
     override val inKelvin get() = 1_000_000 / inMireds
@@ -41,7 +44,8 @@ val Number.mireds: ColorTemperature get() = MiredColorTemperature(toDouble())
  * This is universally measured in degrees Kelvin, but could be any unit
  * of temperature.
  */
-internal data class StandardColorTemperature(
+@JvmInline
+internal value class StandardColorTemperature(
     override val asTemperature: Temperature,
 ): ColorTemperature {
     override val inKelvin: Double get() = asTemperature.inKelvin

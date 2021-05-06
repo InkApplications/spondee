@@ -1,5 +1,7 @@
 package inkapplications.spondee.math
 
+import kotlin.jvm.JvmInline
+
 /**
  * Represents a percentage value.
  */
@@ -41,7 +43,8 @@ interface Percentage {
 /**
  * Store a percentage as a fractional backed value.
  */
-internal data class FractionalPercentage(override val fraction: Double): Percentage {
+@JvmInline
+internal value class FractionalPercentage(override val fraction: Double): Percentage {
     override val whole: Double get() = fraction * 100
 
     override operator fun plus(other: Percentage): Percentage = FractionalPercentage(fraction + other.fraction)
@@ -58,7 +61,8 @@ internal data class FractionalPercentage(override val fraction: Double): Percent
  * This is fairly equivalent to a [FractionalPercentage] but allows us to not
  * modify the value at all.
  */
-internal data class WholePercentage(override val whole: Double): Percentage {
+@JvmInline
+internal value class WholePercentage(override val whole: Double): Percentage {
     override val fraction: Double get() = whole / 100
 
     override operator fun plus(other: Percentage): Percentage = WholePercentage(whole + other.whole)

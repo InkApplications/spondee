@@ -1,5 +1,6 @@
 package inkapplications.spondee.measures
 
+import kotlin.jvm.JvmInline
 import kotlin.math.abs
 
 /**
@@ -8,42 +9,44 @@ import kotlin.math.abs
  * This can be expressed as a decimal as part of Lat/Lng lookups
  * or as degrees/minutes/seconds and a Cardinal.
  */
-sealed class GeoLine {
-    abstract val asDecimal: Double
-    abstract val degreesComponent: Int
-    abstract val minutesComponent: Int
-    abstract val secondsComponent: Float
-    abstract val cardinal: Cardinal
-
-    protected val Double.degreesComponent get() = abs(toInt())
-    protected val Double.minutesComponent get() = ((abs(this) - degreesComponent) * 60).toInt()
-    protected val Double.secondsComponent get() = ((abs(this) - degreesComponent - (minutesComponent / 60.0)) * 3600).toFloat()
-    protected fun toDecimal(
-        degrees: Int,
-        minutes: Int,
-        seconds: Float,
-        cardinal: Cardinal,
-    ) = (degrees.toDouble() + (minutes.toDouble() / 60.0) + (seconds / 3600.0)) * cardinal.decimalSign
+sealed interface GeoLine {
+    val asDecimal: Double
+    val degreesComponent: Int
+    val minutesComponent: Int
+    val secondsComponent: Float
+    val cardinal: Cardinal
 }
+
+private val Double.degreesComponent get() = abs(toInt())
+private val Double.minutesComponent get() = ((abs(this) - degreesComponent) * 60).toInt()
+private val Double.secondsComponent get() = ((abs(this) - degreesComponent - (minutesComponent / 60.0)) * 3600).toFloat()
+private fun toDecimal(
+    degrees: Int,
+    minutes: Int,
+    seconds: Float,
+    cardinal: Cardinal,
+) = (degrees.toDouble() + (minutes.toDouble() / 60.0) + (seconds / 3600.0)) * cardinal.decimalSign
 
 /**
  * Latitude/parallel position of a coordinate.
  */
-abstract class Latitude: GeoLine()
+interface Latitude: GeoLine
 
 /**
  * Longitude/meridian position of a coordinate.
  */
-abstract class Longitude: GeoLine()
+interface Longitude: GeoLine
 
-internal data class DecimalLatitude(override val asDecimal: Double): Latitude() {
+@JvmInline
+internal value class DecimalLatitude(override val asDecimal: Double): Latitude {
     override val degreesComponent: Int get() = asDecimal.degreesComponent
     override val minutesComponent: Int get() = asDecimal.minutesComponent
     override val secondsComponent: Float get() = asDecimal.secondsComponent
     override val cardinal: Cardinal get() = if (asDecimal > 0) Cardinal.North else Cardinal.South
 }
 
-internal data class DecimalLongitude(override val asDecimal: Double): Longitude() {
+@JvmInline
+internal value class DecimalLongitude(override val asDecimal: Double): Longitude {
     override val degreesComponent: Int get() = asDecimal.degreesComponent
     override val minutesComponent: Int get() = asDecimal.minutesComponent
     override val secondsComponent: Float get() = asDecimal.secondsComponent
@@ -55,7 +58,7 @@ internal data class DmsLatitude(
     override val minutesComponent: Int,
     override val secondsComponent: Float,
     override val cardinal: Cardinal,
-): Latitude() {
+): Latitude {
     override val asDecimal: Double get() = toDecimal(
         degrees = degreesComponent,
         minutes = minutesComponent,
@@ -68,7 +71,7 @@ internal data class DmsLongitude(
     override val minutesComponent: Int,
     override val secondsComponent: Float,
     override val cardinal: Cardinal,
-): Longitude() {
+): Longitude {
     override val asDecimal: Double get() = toDecimal(
         degrees = degreesComponent,
         minutes = minutesComponent,

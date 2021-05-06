@@ -1,5 +1,7 @@
 package inkapplications.spondee.measures
 
+import kotlin.jvm.JvmInline
+
 /**
  * Unit of measurement for a length/distance.
  */
@@ -15,7 +17,8 @@ interface Length {
     val inKilometers: Double
 }
 
-internal data class HundredthsOfInches(override val inHundredthsOfInches: Double): Length {
+@JvmInline
+internal value class HundredthsOfInches(override val inHundredthsOfInches: Double): Length {
     override val inInches: Double get() = inHundredthsOfInches / 100
     override val inFeet: Double get() = inHundredthsOfInches / 100 / 12
     override val inMiles: Double get() = inHundredthsOfInches / 100 / 12 / 5280
@@ -28,7 +31,8 @@ internal data class HundredthsOfInches(override val inHundredthsOfInches: Double
 
 val Number.hundredthsOfInches: Length get() = HundredthsOfInches(toDouble())
 
-internal data class Inches(override val inInches: Double): Length {
+@JvmInline
+internal value class Inches(override val inInches: Double): Length {
     override val inHundredthsOfInches: Double get() = inInches * 100
     override val inFeet: Double get() = inInches / 12
     override val inMiles: Double get() = inInches / 12 / 5280
@@ -41,7 +45,8 @@ internal data class Inches(override val inInches: Double): Length {
 
 val Number.inches: Length get() = Inches(toDouble())
 
-internal data class Feet(override val inFeet: Double): Length {
+@JvmInline
+internal value class Feet(override val inFeet: Double): Length {
     override val inHundredthsOfInches: Double get() = inFeet * 12 * 100
     override val inInches: Double get() = inFeet * 12
     override val inMiles: Double get() = inFeet / 5280
@@ -54,7 +59,8 @@ internal data class Feet(override val inFeet: Double): Length {
 
 val Number.feet: Length get() = Feet(toDouble())
 
-internal data class Miles(override val inMiles: Double): Length {
+@JvmInline
+internal value class Miles(override val inMiles: Double): Length {
     override val inHundredthsOfInches: Double get() = inMiles * 5280 * 12 * 100
     override val inInches: Double get() = inMiles * 5280 * 12
     override val inFeet: Double get() = inMiles * 5280
@@ -67,7 +73,8 @@ internal data class Miles(override val inMiles: Double): Length {
 
 val Number.miles: Length get() = Miles(toDouble())
 
-internal data class Millimeters(override val inMillimeters: Double): Length {
+@JvmInline
+internal value class Millimeters(override val inMillimeters: Double): Length {
     override val inHundredthsOfInches: Double get() = inMillimeters * 3.937008
     override val inInches: Double get() = inMillimeters * 0.03937008
     override val inFeet: Double get() = inMillimeters * 0.00328084
@@ -80,7 +87,8 @@ internal data class Millimeters(override val inMillimeters: Double): Length {
 
 val Number.millimeters: Length get() = Millimeters(toDouble())
 
-internal data class Centimeters(override val inCentimeters: Double): Length {
+@JvmInline
+internal value class Centimeters(override val inCentimeters: Double): Length {
     override val inHundredthsOfInches: Double get() = inCentimeters * 39.37008
     override val inInches: Double get() = inCentimeters * 0.3937008
     override val inFeet: Double get() = inCentimeters * 0.0328084
@@ -93,7 +101,8 @@ internal data class Centimeters(override val inCentimeters: Double): Length {
 
 val Number.centimeters: Length get() = Centimeters(toDouble())
 
-internal data class Meters(override val inMeters: Double): Length {
+@JvmInline
+internal value class Meters(override val inMeters: Double): Length {
     override val inHundredthsOfInches: Double get() = inMeters * 3937.008
     override val inInches: Double get() = inMeters * 39.37008
     override val inFeet: Double get() = inMeters * 3.28084
@@ -101,12 +110,13 @@ internal data class Meters(override val inMeters: Double): Length {
 
     override val inMillimeters: Double get() = inMeters * 1000
     override val inCentimeters: Double get() = inMeters * 100
-    override val inKilometers: Double get() = inMeters / 100
+    override val inKilometers: Double get() = inMeters / 1000
 }
 
 val Number.meters: Length get() = Meters(toDouble())
 
-internal data class Kilometers(override val inKilometers: Double): Length {
+@JvmInline
+internal value class Kilometers(override val inKilometers: Double): Length {
     override val inHundredthsOfInches: Double get() = inKilometers * 3937008
     override val inInches: Double get() = inKilometers * 39370.08
     override val inFeet: Double get() = inKilometers * 3280.84

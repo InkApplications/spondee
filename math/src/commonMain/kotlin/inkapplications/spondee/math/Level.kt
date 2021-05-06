@@ -1,5 +1,6 @@
 package inkapplications.spondee.math
 
+import kotlin.jvm.JvmInline
 import kotlin.math.absoluteValue
 import kotlin.math.pow
 
@@ -28,7 +29,8 @@ interface Level {
     operator fun unaryPlus(): Level = this
 }
 
-internal data class Bels(override val asBels: Double): Level {
+@JvmInline
+internal value class Bels(override val asBels: Double): Level {
     override val asDecibels get() = asBels * 10
     override val symbol: Char get() = if (asBels >= 0) '+' else '-'
 
@@ -39,7 +41,8 @@ internal data class Bels(override val asBels: Double): Level {
     override fun toString(): String = "$symbol${asBels.absoluteValue}B"
 }
 
-internal data class Decibels(override val asDecibels: Double): Level {
+@JvmInline
+internal value class Decibels(override val asDecibels: Double): Level {
     override val asBels get() = asDecibels / 10
     override val symbol: Char get() = if (asDecibels >= 0) '+' else '-'
 

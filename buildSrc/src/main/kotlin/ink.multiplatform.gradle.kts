@@ -4,7 +4,7 @@ plugins {
 
 repositories {
     mavenCentral()
-0}
+}
 
 kotlin {
     jvm()
