@@ -55,7 +55,7 @@ jobs:
                 run: ./gradlew publishLinuxArm32HfpPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
                 name: Build Linux ARM64 Publication
-                run: ./gradlew publishLinuxX64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+                run: ./gradlew publishLinuxArm64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
                 name: Zip All Publications
                 run: ./gradlew zipPublications
