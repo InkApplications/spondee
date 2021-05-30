@@ -5,32 +5,20 @@ import kotlin.jvm.JvmInline
 /**
  * Unit of energy per unit time
  */
-interface Power {
+interface Power: DoubleMeasure<Power> {
     /**
      * Express the power in watts.
      */
     val inWatts: Double
-
-    operator fun compareTo(other: Power): Int
-    operator fun plus(other: Power): Power
-    operator fun minus(other: Power): Power
-    operator fun div(other: Number): Power
-    operator fun times(other: Number): Power
-    operator fun unaryPlus(): Power = this
-    operator fun unaryMinus(): Power
 }
 
 /**
  * SI Unit of Power.
  */
 @JvmInline
-internal value class Watts(override val inWatts: Double): Power {
-    override fun compareTo(other: Power) = inWatts.compareTo(other.inWatts)
-    override fun plus(other: Power): Power = Watts(inWatts + other.inWatts)
-    override fun minus(other: Power): Power = Watts(inWatts - other.inWatts)
-    override fun div(other: Number): Power = Watts(inWatts / other.toDouble())
-    override fun times(other: Number): Power = Watts(inWatts * other.toDouble())
-    override fun unaryMinus(): Power = Watts(-inWatts)
+value class Watts(override val inWatts: Double): Power {
+    override fun convert(value: Power): Double = value.inWatts
+    override fun create(value: Double): Power = Watts(value)
 
     override fun toString(): String = "${inWatts}W"
 }

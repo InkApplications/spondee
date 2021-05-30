@@ -5,7 +5,7 @@ import kotlin.jvm.JvmInline
 /**
  * Unit of measurement for a length/distance.
  */
-interface Length {
+interface Length: DoubleMeasure<Length> {
     val inHundredthsOfInches: Double
     val inInches: Double
     val inFeet: Double
@@ -27,6 +27,10 @@ internal value class HundredthsOfInches(override val inHundredthsOfInches: Doubl
     override val inCentimeters: Double get() = inHundredthsOfInches * 0.0254
     override val inMeters: Double get() = inHundredthsOfInches * 0.000254
     override val inKilometers: Double get() = inHundredthsOfInches * 0.000000254
+
+    override fun convert(value: Length): Double = value.inHundredthsOfInches
+    override fun create(value: Double): Length = HundredthsOfInches(value)
+
     override fun toString(): String = "${inHundredthsOfInches}(1/100)in"
 }
 
@@ -42,10 +46,15 @@ internal value class Inches(override val inInches: Double): Length {
     override val inCentimeters: Double get() = inInches * 2.54
     override val inMeters: Double get() = inInches * 0.0254
     override val inKilometers: Double get() = inInches * 0.0000254
+
+    override fun convert(value: Length): Double = value.inInches
+    override fun create(value: Double): Length = Inches(value)
+
     override fun toString(): String = "${inInches}in"
 }
 
 val Number.inches: Length get() = Inches(toDouble())
+val inch = 1.inches
 
 @JvmInline
 internal value class Feet(override val inFeet: Double): Length {
@@ -57,10 +66,15 @@ internal value class Feet(override val inFeet: Double): Length {
     override val inCentimeters: Double get() = inFeet * 30.48
     override val inMeters: Double get() = inFeet * 0.3048
     override val inKilometers: Double get() = inFeet * 0.0003048
+
+    override fun convert(value: Length): Double = value.inFeet
+    override fun create(value: Double): Length = Feet(value)
+
     override fun toString(): String = "${inFeet}ft"
 }
 
 val Number.feet: Length get() = Feet(toDouble())
+val foot = 1.feet
 
 @JvmInline
 internal value class Miles(override val inMiles: Double): Length {
@@ -72,10 +86,15 @@ internal value class Miles(override val inMiles: Double): Length {
     override val inCentimeters: Double get() = inMiles * 160934.4
     override val inMeters: Double get() = inMiles * 1609.344
     override val inKilometers: Double get() = inMiles * 1.609344
+
+    override fun convert(value: Length): Double = value.inMiles
+    override fun create(value: Double): Length = Miles(value)
+
     override fun toString(): String = "${inMiles}mi"
 }
 
 val Number.miles: Length get() = Miles(toDouble())
+val mile = 1.miles
 
 @JvmInline
 internal value class Millimeters(override val inMillimeters: Double): Length {
@@ -87,10 +106,15 @@ internal value class Millimeters(override val inMillimeters: Double): Length {
     override val inCentimeters: Double get() = inMillimeters / 10
     override val inMeters: Double get() = inMillimeters / 1000
     override val inKilometers: Double get() = inMillimeters / 1000000
-    override fun toString(): String = "${inMiles}mm"
+
+    override fun convert(value: Length): Double = value.inMillimeters
+    override fun create(value: Double): Length = Millimeters(value)
+
+    override fun toString(): String = "${inMillimeters}mm"
 }
 
 val Number.millimeters: Length get() = Millimeters(toDouble())
+val millimeter = 1.millimeters
 
 @JvmInline
 internal value class Centimeters(override val inCentimeters: Double): Length {
@@ -102,10 +126,15 @@ internal value class Centimeters(override val inCentimeters: Double): Length {
     override val inMillimeters: Double get() = inCentimeters * 10
     override val inMeters: Double get() = inCentimeters / 100
     override val inKilometers: Double get() = inCentimeters / 100000
-    override fun toString(): String = "${inMiles}cm"
+
+    override fun convert(value: Length): Double = value.inCentimeters
+    override fun create(value: Double): Length = Centimeters(value)
+
+    override fun toString(): String = "${inCentimeters}cm"
 }
 
 val Number.centimeters: Length get() = Centimeters(toDouble())
+val centimeter = 1.centimeters
 
 @JvmInline
 internal value class Meters(override val inMeters: Double): Length {
@@ -117,10 +146,15 @@ internal value class Meters(override val inMeters: Double): Length {
     override val inMillimeters: Double get() = inMeters * 1000
     override val inCentimeters: Double get() = inMeters * 100
     override val inKilometers: Double get() = inMeters / 1000
-    override fun toString(): String = "${inMiles}m"
+
+    override fun convert(value: Length): Double = value.inMeters
+    override fun create(value: Double): Length = Meters(value)
+
+    override fun toString(): String = "${inMeters}m"
 }
 
 val Number.meters: Length get() = Meters(toDouble())
+val meter = 1.meters
 
 @JvmInline
 internal value class Kilometers(override val inKilometers: Double): Length {
@@ -132,7 +166,12 @@ internal value class Kilometers(override val inKilometers: Double): Length {
     override val inMillimeters: Double get() = inKilometers * 1000000
     override val inCentimeters: Double get() = inKilometers * 100000
     override val inMeters: Double get() = inKilometers * 1000
-    override fun toString(): String = "${inMiles}km"
+
+    override fun convert(value: Length): Double = value.inKilometers
+    override fun create(value: Double): Length = Kilometers(value)
+
+    override fun toString(): String = "${inKilometers}km"
 }
 
 val Number.kilometers: Length get() = Kilometers(toDouble())
+val kilometer = 1.kilometers
