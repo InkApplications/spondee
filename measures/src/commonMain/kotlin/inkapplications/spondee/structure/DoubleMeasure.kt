@@ -67,3 +67,7 @@ operator fun <A: DoubleMeasure<A>, B: DoubleMeasure<B>> B.times(other: Product<A
 operator fun <A: DoubleMeasure<A>, B: DoubleMeasure<B>> A.times(other: B): Product<A, B> {
     return Product(this, other)
 }
+
+operator fun <A: DoubleMeasure<A>> A.rem(other: A): A {
+    return create(convert(this).rem(convert(other)))
+}
