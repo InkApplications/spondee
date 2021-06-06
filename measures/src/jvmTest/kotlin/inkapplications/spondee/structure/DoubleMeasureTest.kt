@@ -22,6 +22,5 @@ class DoubleMeasureTest {
         assertEquals(61.5, (a / 2).value)
         assertEquals(246.0, (a * 2).value)
         assertEquals(Product(a, b), a * b)
-        assertEquals(106272.0, (B(2.0) * (a * b)).value)
     }
 }

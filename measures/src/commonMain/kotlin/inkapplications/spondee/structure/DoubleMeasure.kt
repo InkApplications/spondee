@@ -60,10 +60,6 @@ operator fun <A: DoubleMeasure<A>> A.minus(other: A): A {
     return create(convert(this) - convert(other))
 }
 
-operator fun <A: DoubleMeasure<A>, B: DoubleMeasure<B>> B.times(other: Product<A, B>): A {
-    return other.left * convert(other.right) * convert(this)
-}
-
 operator fun <A: DoubleMeasure<A>, B: DoubleMeasure<B>> A.times(other: B): Product<A, B> {
     return Product(this, other)
 }
