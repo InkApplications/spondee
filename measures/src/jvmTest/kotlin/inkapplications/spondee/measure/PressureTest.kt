@@ -6,16 +6,16 @@ import kotlin.test.assertEquals
 class PressureTest {
     @Test
     fun conversions() {
-        assertEquals(123.0, 123.pascals.inPascals, .0001)
-        assertEquals(.00123, 123.pascals.inBar, .000001)
-        assertEquals(.01784, 123.pascals.inPsi, .00001)
+        assertEquals(123.0, 123.pascals.inPascals.baseValue, 1e-5)
+        assertEquals(.00123, 123.pascals.inBar.baseValue, 1e-10)
+        assertEquals(0.01783964249, 123.pascals.inPsi, 1e-10)
 
-        assertEquals(12300000.0, 123.bar.inPascals, .0001)
-        assertEquals(123.0, 123.bar.inBar, .000001)
-        assertEquals(1783.96371, 123.bar.inPsi, .000001)
+        assertEquals(12300000.0, 123.bar.inPascals.baseValue, 1e-5)
+        assertEquals(123.0, 123.bar.inBar.baseValue, 1e-10)
+        assertEquals(1783.96424993, 123.bar.inPsi, 1e-8)
 
-        assertEquals(848055.14, 123.psi.inPascals, .01)
-        assertEquals(8.48055, 123.psi.inBar, .00001)
-        assertEquals(123.0, 123.psi.inPsi, .000001)
+        assertEquals(848055.111, 123.psi.inPascals.baseValue, 1e-3)
+        assertEquals(8.48055111, 123.psi.inBar.baseValue, 1e-10)
+        assertEquals(123.0, 123.psi.inPsi, 1e-10)
     }
 }
