@@ -12,9 +12,9 @@ typealias Irradiance = Ratio<Power, Square<Length>>
 /**
  * Express a number representing Irradiance as watts per square meter.
  */
-val Number.wattsPerSquareMeter: Irradiance get() = toDouble().watts per Square(meter)
+val Number.wattsPerSquareMeter: Irradiance get() = toDouble().watts per Square(1.meters)
 
 /**
  * Express the irradiance in watts per square meter
  */
-val Irradiance.inWattsPerSquareMeter: Double get() = numerator.inWatts * denominator.width.inMeters
+val Irradiance.inWattsPerSquareMeter: Double get() = numerator.inWatts * denominator.width.inMeters.baseValue

@@ -9,5 +9,5 @@ import kotlin.time.ExperimentalTime
 typealias Speed = Ratio<Length, Duration>
 
 val Ratio<Length, Duration>.inMilesPerHour get() = numerator.inMiles * denominator.toDouble(DurationUnit.HOURS)
-val Ratio<Length, Duration>.inKilometersPerHour get() = numerator.inKilometers * denominator.toDouble(DurationUnit.HOURS)
-val Ratio<Length, Duration>.inMetersPerSecond get() = numerator.inMeters * denominator.toDouble(DurationUnit.SECONDS)
+val Ratio<Length, Duration>.inKilometersPerHour get() = numerator.inMeters.baseValue * denominator.toDouble(DurationUnit.HOURS)
+val Ratio<Length, Duration>.inMetersPerSecond get() = numerator.inMeters.baseValue * denominator.toDouble(DurationUnit.SECONDS)
