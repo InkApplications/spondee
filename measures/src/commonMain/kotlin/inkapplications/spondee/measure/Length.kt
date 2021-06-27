@@ -7,8 +7,8 @@ import kotlin.jvm.JvmInline
  * Unit of measurement for a length/distance.
  */
 @JvmInline
-value class Length internal constructor(override val baseValue: Double): Measurement<Length> {
-    override val baseUnit get() = Meters
+value class Length internal constructor(override val rawValue: Double): Measurement<Length> {
+    override val storedUnit get() = Meters
 }
 
 /**

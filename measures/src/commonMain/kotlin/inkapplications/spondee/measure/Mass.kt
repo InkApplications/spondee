@@ -5,8 +5,8 @@ import kotlin.jvm.JvmInline
 import kotlin.math.pow
 
 @JvmInline
-value class Mass internal constructor(override val baseValue: Double): Measurement<Mass> {
-    override val baseUnit: MeasurementUnit<Mass> get() = Grams
+value class Mass internal constructor(override val rawValue: Double): Measurement<Mass> {
+    override val storedUnit: MeasurementUnit<Mass> get() = Grams
 }
 
 object Grams: BaseUnit<Mass>() {

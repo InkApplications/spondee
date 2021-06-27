@@ -7,8 +7,8 @@ import kotlin.jvm.JvmInline
  * Unit of force applied over an area.
  */
 @JvmInline
-value class Pressure internal constructor(override val baseValue: Double): Measurement<Pressure> {
-    override val baseUnit: MeasurementUnit<Pressure> get() = Pascals
+value class Pressure internal constructor(override val rawValue: Double): Measurement<Pressure> {
+    override val storedUnit: MeasurementUnit<Pressure> get() = Pascals
 }
 
 /**

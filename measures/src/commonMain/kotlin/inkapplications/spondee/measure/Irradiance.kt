@@ -9,8 +9,8 @@ import kotlin.jvm.JvmInline
  * Power per unit area.
  */
 @JvmInline
-value class Irradiance internal constructor(override val baseValue: Double): Measurement<Irradiance> {
-    override val baseUnit: MeasurementUnit<Irradiance> get() = WattsPerSquareMeter
+value class Irradiance internal constructor(override val rawValue: Double): Measurement<Irradiance> {
+    override val storedUnit: MeasurementUnit<Irradiance> get() = WattsPerSquareMeter
 }
 
 object WattsPerSquareMeter: BaseUnit<Irradiance>() {

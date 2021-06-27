@@ -9,8 +9,8 @@ import kotlin.jvm.JvmInline
  * Unit of a ratio. Most commonly decibels.
  */
 @JvmInline
-value class Level internal constructor(override val baseValue: Double): Measurement<Level> {
-    override val baseUnit: MeasurementUnit<Level> get() = Bels
+value class Level internal constructor(override val rawValue: Double): Measurement<Level> {
+    override val storedUnit: MeasurementUnit<Level> get() = Bels
 }
 
 object Bels: BaseUnit<Level>() {

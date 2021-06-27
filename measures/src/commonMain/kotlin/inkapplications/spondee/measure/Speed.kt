@@ -9,12 +9,11 @@ import kotlin.jvm.JvmInline
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
 import kotlin.time.ExperimentalTime
-import kotlin.time.hours
 
 @JvmInline
-value class Speed internal constructor(override val baseValue: Double): Measurement<Speed> {
-    override val baseUnit: MeasurementUnit<Speed> get() = MetersPerSecond
-    val lengthComponent: Length get() = Meters.of(baseValue)
+value class Speed internal constructor(override val rawValue: Double): Measurement<Speed> {
+    override val storedUnit: MeasurementUnit<Speed> get() = MetersPerSecond
+    val lengthComponent: Length get() = Meters.of(rawValue)
     val durationComponent: Duration get() = Duration.seconds(1)
 }
 

@@ -9,8 +9,8 @@ import kotlin.math.PI
  * Unit of angle or bearing.
  */
 @JvmInline
-value class Angle internal constructor(override val baseValue: Double): Measurement<Angle> {
-    override val baseUnit: MeasurementUnit<Angle> get() = Radians
+value class Angle internal constructor(override val rawValue: Double): Measurement<Angle> {
+    override val storedUnit: MeasurementUnit<Angle> get() = Radians
 }
 
 object Radians: BaseUnit<Angle>() {

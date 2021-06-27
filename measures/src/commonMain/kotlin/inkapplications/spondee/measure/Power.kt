@@ -9,8 +9,8 @@ import kotlin.jvm.JvmInline
  * Unit of energy per unit time
  */
 @JvmInline
-value class Power internal constructor(override val baseValue: Double): Measurement<Power> {
-    override val baseUnit: MeasurementUnit<Power> get() = Watts
+value class Power internal constructor(override val rawValue: Double): Measurement<Power> {
+    override val storedUnit: MeasurementUnit<Power> get() = Watts
 }
 
 object Watts: BaseUnit<Power>() {

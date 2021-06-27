@@ -7,8 +7,8 @@ import inkapplications.spondee.structure.times
 import kotlin.jvm.JvmInline
 
 @JvmInline
-value class Percentage internal constructor(override val baseValue: Double): Measurement<Percentage> {
-    override val baseUnit: MeasurementUnit<Percentage> get() = DecimalPercentage
+value class Percentage internal constructor(override val rawValue: Double): Measurement<Percentage> {
+    override val storedUnit: MeasurementUnit<Percentage> get() = DecimalPercentage
 }
 
 object DecimalPercentage: BaseUnit<Percentage>() {

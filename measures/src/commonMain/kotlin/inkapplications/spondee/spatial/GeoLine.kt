@@ -1,6 +1,5 @@
 package inkapplications.spondee.spatial
 
-import inkapplications.spondee.spatial.Cardinal
 import kotlin.jvm.JvmInline
 import kotlin.math.abs
 

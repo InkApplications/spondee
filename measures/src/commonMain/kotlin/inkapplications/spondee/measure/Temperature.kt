@@ -7,8 +7,8 @@ import kotlin.jvm.JvmInline
  * Represents a Temperature value.
  */
 @JvmInline
-value class Temperature internal constructor(override val baseValue: Double): Measurement<Temperature> {
-    override val baseUnit: MeasurementUnit<Temperature> get() = TODO()
+value class Temperature internal constructor(override val rawValue: Double): Measurement<Temperature> {
+    override val storedUnit: MeasurementUnit<Temperature> get() = Kelvin
 }
 
 object Kelvin: BaseUnit<Temperature>() {

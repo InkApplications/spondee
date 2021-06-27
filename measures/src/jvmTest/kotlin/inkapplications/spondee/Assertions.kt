@@ -6,7 +6,7 @@ import inkapplications.spondee.structure.MeasurementUnit
 import kotlin.test.assertEquals
 
 fun <T: Measurement<T>> assertConverts(expected: T, actual: T, tolerance: Double = 1e-10) {
-    assertEquals(expected.baseValue, actual.baseValue, tolerance)
+    assertEquals(expected.rawValue, actual.rawValue, tolerance)
 }
 
 class MeasurementAssertions<T: Measurement<T>>(
@@ -29,8 +29,8 @@ class MeasurementAssertions<T: Measurement<T>>(
         actualUnit: MeasurementUnit<T>,
         tolerance: Double = 1e-10
     ) {
-        val actualBaseValue = actualUnit.of(actualValue).baseValue
-        val expectedBaseValue = expectedUnit.of(expectedValue).baseValue
+        val actualBaseValue = actualUnit.of(actualValue).rawValue
+        val expectedBaseValue = expectedUnit.of(expectedValue).rawValue
         assertEquals(
             expected = expectedBaseValue,
             actual = actualBaseValue,
