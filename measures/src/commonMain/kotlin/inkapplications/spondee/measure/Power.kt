@@ -1,30 +1,18 @@
 package inkapplications.spondee.measure
 
-import inkapplications.spondee.structure.DoubleMeasure
+import inkapplications.spondee.structure.BaseUnit
+import inkapplications.spondee.structure.Measurement
+import inkapplications.spondee.structure.MeasurementUnit
 import kotlin.jvm.JvmInline
 
 /**
  * Unit of energy per unit time
  */
-interface Power: DoubleMeasure<Power> {
-    /**
-     * Express the power in watts.
-     */
-    val inWatts: Double
-}
-
-/**
- * SI Unit of Power.
- */
 @JvmInline
-value class Watts(override val inWatts: Double): Power {
-    override fun convert(value: Power): Double = value.inWatts
-    override fun create(value: Double): Power = Watts(value)
-
-    override fun toString(): String = "${inWatts}W"
+value class Power internal constructor(override val baseValue: Double): Measurement<Power> {
+    override val baseUnit: MeasurementUnit<Power> get() = Watts
 }
 
-/**
- * Express a number as unit of power in Watts.
- */
-val Number.watts: Power get() = Watts(toDouble())
+object Watts: BaseUnit<Power>() {
+    override fun of(value: Number): Power = Power(value.toDouble())
+}

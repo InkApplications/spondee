@@ -1,13 +1,34 @@
 @file:OptIn(ExperimentalTime::class)
 package inkapplications.spondee.measure
 
-import inkapplications.spondee.structure.Ratio
+import inkapplications.spondee.structure.BaseUnit
+import inkapplications.spondee.structure.Measurement
+import inkapplications.spondee.structure.MeasurementUnit
+import inkapplications.spondee.structure.value
+import kotlin.jvm.JvmInline
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
 import kotlin.time.ExperimentalTime
+import kotlin.time.hours
 
-typealias Speed = Ratio<Length, Duration>
+@JvmInline
+value class Speed internal constructor(override val baseValue: Double): Measurement<Speed> {
+    override val baseUnit: MeasurementUnit<Speed> get() = MetersPerSecond
+    val lengthComponent: Length get() = Meters.of(baseValue)
+    val durationComponent: Duration get() = Duration.seconds(1)
+}
 
-val Ratio<Length, Duration>.inMilesPerHour get() = numerator.inMiles * denominator.toDouble(DurationUnit.HOURS)
-val Ratio<Length, Duration>.inKilometersPerHour get() = numerator.inMeters.baseValue * denominator.toDouble(DurationUnit.HOURS)
-val Ratio<Length, Duration>.inMetersPerSecond get() = numerator.inMeters.baseValue * denominator.toDouble(DurationUnit.SECONDS)
+object MetersPerSecond: BaseUnit<Speed>() {
+    override fun of(value: Number): Speed = Speed(value.toDouble())
+}
+
+object MilesPerHour: MeasurementUnit<Speed> {
+    override fun convertValue(value: Speed): Double {
+        return value.lengthComponent.value(Miles) / value.durationComponent.toDouble(DurationUnit.HOURS)
+    }
+
+    override fun of(value: Number): Speed {
+        return MetersPerSecond.of(Miles.of(value).value(Meters) / Duration.hours(1).toDouble(DurationUnit.SECONDS))
+    }
+}
+

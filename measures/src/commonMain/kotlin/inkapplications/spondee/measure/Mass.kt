@@ -1,58 +1,24 @@
 package inkapplications.spondee.measure
 
-import inkapplications.spondee.structure.DoubleMeasure
-import inkapplications.spondee.structure.SiValue
+import inkapplications.spondee.structure.*
 import kotlin.jvm.JvmInline
-
-/**
- * Base unit of matter
- */
-interface Mass: DoubleMeasure<Mass> {
-    /**
-     * Express a mass as a value in grams
-     */
-    val inGrams: SiValue
-
-    /**
-     * Express a mass as a value in pounds
-     */
-    val inPounds: ImperialMass
-}
+import kotlin.math.pow
 
 @JvmInline
-value class ImperialMass(val decimal: Double) {
-    val poundsComponent: Long get() = decimal.toLong()
-    val ouncesComponent: Double get() = ((decimal - poundsComponent) * 16)
-
-    operator fun component1() = poundsComponent
-    operator fun component2() = ouncesComponent
-    override fun toString() = "${poundsComponent}lbs ${ouncesComponent}oz"
+value class Mass internal constructor(override val baseValue: Double): Measurement<Mass> {
+    override val baseUnit: MeasurementUnit<Mass> get() = Grams
 }
 
-private const val GRAMS_PER_POUND = 453.59237
-
-@JvmInline
-internal value class Grams(override val inGrams: SiValue): Mass {
-    override val inPounds: ImperialMass get() = ImperialMass(inGrams.baseValue / GRAMS_PER_POUND)
-    override fun convert(value: Mass): Double = value.inGrams.baseValue
-    override fun create(value: Double): Mass = value.grams
-    override fun toString(): String = "${inGrams}g"
+object Grams: BaseUnit<Mass>() {
+    override fun of(value: Number): Mass = Mass(value.toDouble())
 }
 
-/**
- * Express a mass in grams
- */
-val Number.grams: Mass get() = Grams(SiValue(toDouble()))
-
-@JvmInline
-internal value class Pounds(override val inPounds: ImperialMass): Mass {
-    override val inGrams: SiValue get() = SiValue(inPounds.decimal * GRAMS_PER_POUND)
-    override fun convert(value: Mass): Double = value.inPounds.decimal
-    override fun create(value: Double): Mass = value.pounds
-    override fun toString(): String = inPounds.toString()
-}
-
-/**
- * Express a mass in pounds
- */
-val Number.pounds: Mass get() = Pounds(ImperialMass(toDouble()))
+object Grains: MeasurementUnit<Mass> by Pounds * 7000
+object Scruples: MeasurementUnit<Mass> by Pounds * 350
+object Drams: MeasurementUnit<Mass> by Pounds * 256
+object Ounces: MeasurementUnit<Mass> by Grams / 28.349_523_125
+object Pounds: MeasurementUnit<Mass> by Ounces / 16
+object ShortHundredweights: MeasurementUnit<Mass> by Pounds / 100
+object ShortTons: MeasurementUnit<Mass> by Pounds / 2000
+object LongTons: MeasurementUnit<Mass> by Pounds / 2240
+object MetricTons: MeasurementUnit<Mass> by Grams / 1e6
