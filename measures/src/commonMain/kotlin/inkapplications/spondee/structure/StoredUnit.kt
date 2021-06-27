@@ -1,5 +1,5 @@
 package inkapplications.spondee.structure
 
-abstract class BaseUnit<M: Measurement<M>>: MeasurementUnit<M> {
+abstract class StoredUnit<M: DoubleMeasurement<M>>: DoubleUnit<M> {
     final override fun convertValue(value: M): Double = value.rawValue
 }

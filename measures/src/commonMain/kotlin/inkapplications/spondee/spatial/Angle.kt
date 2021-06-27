@@ -9,15 +9,15 @@ import kotlin.math.PI
  * Unit of angle or bearing.
  */
 @JvmInline
-value class Angle internal constructor(override val rawValue: Double): Measurement<Angle> {
-    override val storedUnit: MeasurementUnit<Angle> get() = Radians
+value class Angle internal constructor(override val rawValue: Double): DoubleMeasurement<Angle> {
+    override val storedUnit: DoubleUnit<Angle> get() = Radians
 }
 
-object Radians: BaseUnit<Angle>() {
+object Radians: StoredUnit<Angle>() {
     override fun of(value: Number): Angle = Angle(value.toDouble())
 }
 
-object Degrees: MeasurementUnit<Angle> by Radians * (180.0 / PI)
+object Degrees: DoubleUnit<Angle> by Radians * (180.0 / PI)
 
 /**
  * Convert a cardinal direction to an angle in degrees clockwise from 0º North.
