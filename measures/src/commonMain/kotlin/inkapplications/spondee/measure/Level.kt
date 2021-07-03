@@ -13,6 +13,8 @@ value class Level internal constructor(override val rawValue: Double): DoubleMea
     override val storedUnit: DoubleUnit<Level> get() = Bels
 }
 
-object Bels: StoredUnit<Level>() {
+object Bels: StoredUnit<Level>(
+    symbol = "B"
+) {
     override fun of(value: Number): Level = Level(value.toDouble())
 }

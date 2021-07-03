@@ -11,9 +11,17 @@ value class Temperature internal constructor(override val rawValue: Double): Dou
     override val storedUnit: DoubleUnit<Temperature> get() = Kelvin
 }
 
-object Kelvin: StoredUnit<Temperature>() {
+object Kelvin: StoredUnit<Temperature>(
+    symbol = "K"
+) {
     override fun of(value: Number): Temperature = Temperature(value.toDouble())
 }
 
-object Celsius: DoubleUnit<Temperature> by Kelvin - 273.15
-object Fahrenheit: DoubleUnit<Temperature> by (Kelvin - 273.15) * 1.8 + 32
+object Celsius: DerivedUnit<Temperature>(
+    definition = Kelvin - 273.15,
+    symbol = "ºC",
+)
+object Fahrenheit: DerivedUnit<Temperature>(
+    definition = (Kelvin - 273.15) * 1.8 + 32,
+    symbol = "ºF",
+)

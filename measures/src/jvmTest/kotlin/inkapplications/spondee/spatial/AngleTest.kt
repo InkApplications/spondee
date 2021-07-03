@@ -17,6 +17,12 @@ class AngleTest {
     }
 
     @Test
+    fun formats() {
+        assertEquals("0.0", Radians.of(0).let { Radians.format(it) })
+        assertEquals("0.0º", Degrees.of(0).let { Degrees.format(it) })
+    }
+
+    @Test
     fun cardinals() {
         assertEquals(Cardinal.West, Degrees.of(316).toNearestCardinal())
         assertEquals(Cardinal.North, Degrees.of(0).toNearestCardinal())

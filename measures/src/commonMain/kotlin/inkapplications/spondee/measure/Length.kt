@@ -14,13 +14,35 @@ value class Length internal constructor(override val rawValue: Double): DoubleMe
 /**
  * SI Unit of length
  */
-object Meters: StoredUnit<Length>() {
+object Meters: StoredUnit<Length>(symbol = "m") {
     override fun of(value: Number): Length = Length(value.toDouble())
 }
 
-object Miles: DoubleUnit<Length> by Feet / 5280
-object Yards: DoubleUnit<Length> by Feet / 3
-object Feet: DoubleUnit<Length> by Meters * 3.280_840
-object Inches: DoubleUnit<Length> by Feet * 12
-object HundredthInches: DoubleUnit<Length> by Inches * 100
-object ThousandthInches: DoubleUnit<Length> by Inches * 1000
+object Miles: DerivedUnit<Length>(
+    definition = Feet / 5280,
+    symbol = "mi",
+)
+
+object Yards: DerivedUnit<Length>(
+    definition = Feet / 3,
+    symbol = "yd",
+)
+object Feet: DerivedUnit<Length>(
+    definition = Meters * 3.280_840,
+    symbol = "ft",
+)
+
+object Inches: DerivedUnit<Length>(
+    definition = Feet * 12,
+    symbol = "in",
+)
+
+object HundredthInches: DerivedUnit<Length>(
+    definition = Inches * 100,
+    symbol = "(1/100)in",
+)
+
+object ThousandthInches: DerivedUnit<Length>(
+    definition = Inches * 1000,
+    symbol = "thou",
+)

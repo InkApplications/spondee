@@ -13,6 +13,8 @@ value class Power internal constructor(override val rawValue: Double): DoubleMea
     override val storedUnit: DoubleUnit<Power> get() = Watts
 }
 
-object Watts: StoredUnit<Power>() {
+object Watts: StoredUnit<Power>(
+    symbol = "W"
+) {
     override fun of(value: Number): Power = Power(value.toDouble())
 }

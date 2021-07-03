@@ -1,10 +1,7 @@
 @file:OptIn(ExperimentalTime::class)
 package inkapplications.spondee.measure
 
-import inkapplications.spondee.structure.StoredUnit
-import inkapplications.spondee.structure.DoubleMeasurement
-import inkapplications.spondee.structure.DoubleUnit
-import inkapplications.spondee.structure.value
+import inkapplications.spondee.structure.*
 import kotlin.jvm.JvmInline
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
@@ -17,11 +14,15 @@ value class Speed internal constructor(override val rawValue: Double): DoubleMea
     val durationComponent: Duration get() = Duration.seconds(1)
 }
 
-object MetersPerSecond: StoredUnit<Speed>() {
+object MetersPerSecond: StoredUnit<Speed>(
+    symbol = "m/s"
+) {
     override fun of(value: Number): Speed = Speed(value.toDouble())
 }
 
-object MilesPerHour: DoubleUnit<Speed> {
+object MilesPerHour: DoubleUnit<Speed>, Symbolized, UnitFormatter<Speed> {
+    override val symbol: String = "mph"
+
     override fun convertValue(value: Speed): Double {
         return value.lengthComponent.value(Miles) / value.durationComponent.toDouble(DurationUnit.HOURS)
     }
@@ -29,5 +30,7 @@ object MilesPerHour: DoubleUnit<Speed> {
     override fun of(value: Number): Speed {
         return MetersPerSecond.of(Miles.of(value).value(Meters) / Duration.hours(1).toDouble(DurationUnit.SECONDS))
     }
+
+    override fun format(measurement: Speed): String = "${convertValue(measurement)}$symbol"
 }
 

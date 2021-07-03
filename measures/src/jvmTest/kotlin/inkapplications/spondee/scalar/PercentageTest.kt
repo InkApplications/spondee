@@ -13,14 +13,8 @@ class PercentageTest {
     }
 
     @Test
-    fun math() {
-        // TODO
-//        assertEquals(500.0, 50.percent of 1000)
-//        assertEquals(96.percent, 32.percent + 64.percent)
-//        assertEquals(16.percent, 32.percent - 16.percent)
-//        assertEquals(-32.0, -(32.percent).whole)
-//        assertEquals(32.0, +(32.percent).whole)
-//        assertEquals(.64, 32.percent * 2)
-//        assertEquals(.5, 32.percent / .64)
+    fun formats() {
+        assertEquals("0.0", DecimalPercentage.of(0).let { DecimalPercentage.format(it) })
+        assertEquals("0.0%", WholePercentage.of(0).let { WholePercentage.format(it) })
     }
 }

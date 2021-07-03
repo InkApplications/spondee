@@ -13,4 +13,11 @@ class TemperatureTest {
             equals(-238.27, Fahrenheit)
         }
     }
+
+    @Test
+    fun formats() {
+        assertEquals("32.0ºF", Fahrenheit.of(32).let { Fahrenheit.format(it) })
+        assertEquals("0.0ºC", Celsius.of(0).let { Celsius.format(it) })
+        assertEquals("0.0K", Kelvin.of(0).let { Kelvin.format(it) })
+    }
 }

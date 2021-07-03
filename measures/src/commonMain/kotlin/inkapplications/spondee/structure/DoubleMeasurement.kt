@@ -1,6 +1,8 @@
 package inkapplications.spondee.structure
 
-interface DoubleMeasurement<T: DoubleMeasurement<T>> {
+interface Measurement<T: Measurement<T>>
+
+interface DoubleMeasurement<T: DoubleMeasurement<T>>: Measurement<T> {
     val rawValue: Double
     val storedUnit: DoubleUnit<T>
 }

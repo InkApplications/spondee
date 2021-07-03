@@ -13,6 +13,8 @@ value class Irradiance internal constructor(override val rawValue: Double): Doub
     override val storedUnit: DoubleUnit<Irradiance> get() = WattsPerSquareMeter
 }
 
-object WattsPerSquareMeter: StoredUnit<Irradiance>() {
+object WattsPerSquareMeter: StoredUnit<Irradiance>(
+    symbol = "W/m^2"
+) {
     override fun of(value: Number): Irradiance = Irradiance(value.toDouble())
 }

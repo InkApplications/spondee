@@ -4,7 +4,6 @@ import inkapplications.spondee.structure.*
 import kotlin.jvm.JvmInline
 import kotlin.math.PI
 
-
 /**
  * Unit of angle or bearing.
  */
@@ -13,11 +12,16 @@ value class Angle internal constructor(override val rawValue: Double): DoubleMea
     override val storedUnit: DoubleUnit<Angle> get() = Radians
 }
 
-object Radians: StoredUnit<Angle>() {
+object Radians: StoredUnit<Angle>(
+    symbol = ""
+) {
     override fun of(value: Number): Angle = Angle(value.toDouble())
 }
 
-object Degrees: DoubleUnit<Angle> by Radians * (180.0 / PI)
+object Degrees: DerivedUnit<Angle>(
+    definition = Radians * (180.0 / PI),
+    symbol = "º"
+)
 
 /**
  * Convert a cardinal direction to an angle in degrees clockwise from 0º North.

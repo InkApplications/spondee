@@ -8,16 +8,45 @@ value class Mass internal constructor(override val rawValue: Double): DoubleMeas
     override val storedUnit: DoubleUnit<Mass> get() = Grams
 }
 
-object Grams: StoredUnit<Mass>() {
+object Grams: StoredUnit<Mass>(
+    symbol = "g"
+) {
     override fun of(value: Number): Mass = Mass(value.toDouble())
 }
 
-object Grains: DoubleUnit<Mass> by Pounds * 7000
-object Scruples: DoubleUnit<Mass> by Pounds * 350
-object Drams: DoubleUnit<Mass> by Pounds * 256
-object Ounces: DoubleUnit<Mass> by Grams / 28.349_523_125
-object Pounds: DoubleUnit<Mass> by Ounces / 16
-object ShortHundredweights: DoubleUnit<Mass> by Pounds / 100
-object ShortTons: DoubleUnit<Mass> by Pounds / 2000
-object LongTons: DoubleUnit<Mass> by Pounds / 2240
-object MetricTons: DoubleUnit<Mass> by Grams / 1e6
+object Grains: DerivedUnit<Mass>(
+    definition = Pounds * 7000,
+    symbol = "gr",
+)
+object Scruples: DerivedUnit<Mass>(
+    definition = Pounds * 350,
+    symbol = "scr",
+)
+object Drams: DerivedUnit<Mass>(
+    definition = Pounds * 256,
+    symbol = "dr",
+)
+object Ounces: DerivedUnit<Mass>(
+    definition = Grams / 28.349_523_125,
+    symbol = "oz",
+)
+object Pounds: DerivedUnit<Mass>(
+    definition = Ounces / 16,
+    symbol = "lbs",
+)
+object ShortHundredweights: DerivedUnit<Mass>(
+    definition = Pounds / 100,
+    symbol = "cwt",
+)
+object ShortTons: DerivedUnit<Mass>(
+    definition = Pounds / 2000,
+    symbol = "ST",
+)
+object LongTons: DerivedUnit<Mass>(
+    definition = Pounds / 2240,
+    symbol = "LT",
+)
+object MetricTons: DerivedUnit<Mass>(
+    definition = Grams / 1e6,
+    symbol = "t",
+)
