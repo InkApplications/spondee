@@ -15,4 +15,5 @@ abstract class StoredUnit<M: DoubleMeasurement<M>>(
 ): DoubleUnit<M>, Symbolized, UnitFormatter<M> {
     final override fun convertValue(value: M): Double = value.rawValue
     override fun format(measurement: M): String = "${convertValue(measurement)}${symbol}"
+    override fun format(measurement: M, siScale: SiScale): String = "${measurement.value(siScale, this)}${siScale.symbol}$symbol"
 }

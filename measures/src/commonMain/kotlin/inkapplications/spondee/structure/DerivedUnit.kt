@@ -11,4 +11,5 @@ abstract class DerivedUnit<T: DoubleMeasurement<T>>(
     override val symbol: String,
 ): DoubleUnit<T> by definition, UnitFormatter<T>, Symbolized {
     override fun format(measurement: T): String = "${convertValue(measurement)}${symbol}"
+    override fun format(measurement: T, siScale: SiScale): String = "${measurement.value(siScale, this)}${siScale.symbol}${symbol}"
 }

@@ -32,5 +32,6 @@ object MilesPerHour: DoubleUnit<Speed>, Symbolized, UnitFormatter<Speed> {
     }
 
     override fun format(measurement: Speed): String = "${convertValue(measurement)}$symbol"
+    override fun format(measurement: Speed, siScale: SiScale): String = "${measurement.value(siScale, this)}${siScale.symbol}${symbol}"
 }
 
