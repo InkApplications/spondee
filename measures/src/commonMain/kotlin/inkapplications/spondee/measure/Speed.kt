@@ -1,6 +1,7 @@
 @file:OptIn(ExperimentalTime::class)
 package inkapplications.spondee.measure
 
+import inkapplications.spondee.format.formatDecimal
 import inkapplications.spondee.structure.*
 import kotlin.jvm.JvmInline
 import kotlin.time.Duration
@@ -31,7 +32,6 @@ object MilesPerHour: DoubleUnit<Speed>, Symbolized, UnitFormatter<Speed> {
         return MetersPerSecond.of(Miles.of(value).value(Meters) / Duration.hours(1).toDouble(DurationUnit.SECONDS))
     }
 
-    override fun format(measurement: Speed): String = "${convertValue(measurement)}$symbol"
-    override fun format(measurement: Speed, siScale: SiScale): String = "${measurement.value(siScale, this)}${siScale.symbol}${symbol}"
+    override fun format(measurement: Speed, decimals: Int, decimalSeparator: Char): String = "${convertValue(measurement).formatDecimal(decimals, true, decimalSeparator)}$symbol"
+    override fun format(measurement: Speed, siScale: SiScale, decimals: Int, decimalSeparator: Char): String = "${measurement.value(siScale, this).formatDecimal(decimals, true, decimalSeparator)}${siScale.symbol}${symbol}"
 }
-
