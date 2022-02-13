@@ -132,6 +132,7 @@ jobs:
                     ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
                     ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
                 run: ./gradlew publishMingwX64PublicationToMavenCentralRepository --project-prop version=${GITHUB_TAG/refs\/tags\//}
+                shell: bash
     macos:
         runs-on: macos-latest
         steps:
