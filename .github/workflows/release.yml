@@ -38,6 +38,16 @@ jobs:
                 with:
                     name: Common Publications
                     path: build/distributions/publications.zip
+            -
+                name: Maven Publish
+                env:
+                    GITHUB_TAG: ${{ github.ref }}
+                    ORG_GRADLE_PROJECT_mavenUser: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+                    ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+                    ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.PGP_INK_CI_KEYID }}
+                    ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
+                    ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
+                run: ./gradlew publishKotlinMultiplatformPublicationToMavenCentralRepository publishJvmPublicationToMavenCentralRepository publishJsPublicationToMavenCentralRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
     linux:
         runs-on: ubuntu-latest
         steps:
@@ -65,6 +75,16 @@ jobs:
                 with:
                     name: Linux Publications
                     path: build/distributions/publications.zip
+            -
+                name: Maven Publish
+                env:
+                    GITHUB_TAG: ${{ github.ref }}
+                    ORG_GRADLE_PROJECT_mavenUser: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+                    ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+                    ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.PGP_INK_CI_KEYID }}
+                    ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
+                    ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
+                run: ./gradlew publishLinuxX64PublicationToMavenCentralRepository publishMips32PublicationToMavenCentralRepository publishLinuxArm32HfpPublicationToMavenCentralRepository publishLinuxArm64PublicationToMavenCentralRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
     windows:
         runs-on: windows-latest
         steps:
@@ -84,6 +104,16 @@ jobs:
                 with:
                     name: Windows Publications
                     path: build/distributions/publications.zip
+            -
+                name: Maven Publish
+                env:
+                    GITHUB_TAG: ${{ github.ref }}
+                    ORG_GRADLE_PROJECT_mavenUser: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+                    ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+                    ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.PGP_INK_CI_KEYID }}
+                    ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
+                    ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
+                run: ./gradlew publishMingwX64PublicationToMavenCentralRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
     macos:
         runs-on: macos-latest
         steps:
@@ -102,3 +132,13 @@ jobs:
                 with:
                     name: MacOS Publications
                     path: build/distributions/publications.zip
+            -
+                name: Maven Publish
+                env:
+                    GITHUB_TAG: ${{ github.ref }}
+                    ORG_GRADLE_PROJECT_mavenUser: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+                    ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+                    ORG_GRADLE_PROJECT_signingKeyId: ${{ secrets.PGP_INK_CI_KEYID }}
+                    ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
+                    ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
+                run: ./gradlew publishMacosX64PublicationToMavenCentralRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
