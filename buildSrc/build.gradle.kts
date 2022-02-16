@@ -6,6 +6,6 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("gradle-plugin", "1.5.21"))
+    implementation(kotlin("gradle-plugin", "1.6.10"))
     implementation("com.inkapplications.publishing:ink-publishing:1.0.0")
 }
