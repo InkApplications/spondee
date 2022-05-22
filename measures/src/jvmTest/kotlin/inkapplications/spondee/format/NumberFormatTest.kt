@@ -11,5 +11,6 @@ class NumberFormatTest {
         assertEquals("2.34", 2.341f.formatDecimal(2))
         assertEquals("2.35", 2.345f.formatDecimal(2))
         assertEquals("0.12", .123f.formatDecimal(2))
+        assertEquals("2", 1.9.formatDecimal(0))
     }
 }

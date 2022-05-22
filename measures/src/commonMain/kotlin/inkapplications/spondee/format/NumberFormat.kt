@@ -1,6 +1,7 @@
 package inkapplications.spondee.format
 
 import kotlin.math.pow
+import kotlin.math.roundToInt
 import kotlin.math.roundToLong
 
 /**
@@ -18,7 +19,7 @@ fun Number.formatDecimal(
     decimalSeparator: Char = '.',
 ): String {
     if (decimals == 0) {
-        return toInt().toString()
+        return if (round) toDouble().roundToInt().toString() else toInt().toString()
     }
 
     val raw = toDouble()
