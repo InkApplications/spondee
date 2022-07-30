@@ -2,9 +2,10 @@ package inkapplications.spondee.structure
 
 interface Measurement<T: Measurement<T>>
 
-interface DoubleMeasurement<T: DoubleMeasurement<T>>: Measurement<T> {
+interface DoubleMeasurement<T: DoubleMeasurement<T>>: Measurement<T>, Comparable<DoubleMeasurement<T>> {
     val rawValue: Double
     val storedUnit: DoubleUnit<T>
+    override fun compareTo(other: DoubleMeasurement<T>): Int = rawValue.compareTo(other.rawValue)
 }
 
 fun <T: DoubleMeasurement<T>> T.value(unit: DoubleUnit<T>): Double = unit.convertValue(this)
