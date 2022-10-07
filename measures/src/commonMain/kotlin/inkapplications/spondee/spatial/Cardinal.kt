@@ -16,11 +16,16 @@ enum class Cardinal(val symbol: Char, internal val decimalSign: Int) {
  * Convert a cardinal direction to an angle in degrees clockwise from 0º North.
  */
 fun Cardinal.toAngle(): Angle = when (this) {
-    Cardinal.North -> Degrees.of(0)
-    Cardinal.East -> Degrees.of(90)
-    Cardinal.South -> Degrees.of(180)
-    Cardinal.West -> Degrees.of(270)
+    Cardinal.North -> 0.degrees
+    Cardinal.East -> 90.degrees
+    Cardinal.South -> 180.degrees
+    Cardinal.West -> 270.degrees
 }
+
+/**
+ * Convenience method to get the Cardinal's angle in degrees
+ */
+fun Cardinal.toDegrees(): Degrees = toAngle().toDegrees()
 
 /**
  * Convert a single character to a cardinal direction.

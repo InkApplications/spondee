@@ -26,6 +26,7 @@ fun Number.formatDecimal(
         .times(10.0.pow(decimals))
         .let { if (round) it.roundToLong() else it.toLong() }
         .toString()
+        .let { if (it.length < decimals) "0".repeat(decimals - it.length) + it else it }
     val lastChunk = raw.substring(raw.length - decimals, raw.length)
     val firstChunk = raw.substring(0, raw.length - decimals)
 

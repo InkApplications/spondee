@@ -1,20 +1,8 @@
 package inkapplications.spondee.measure
 
-import inkapplications.spondee.structure.StoredUnit
-import inkapplications.spondee.structure.DoubleMeasurement
-import inkapplications.spondee.structure.DoubleUnit
-import kotlin.jvm.JvmInline
-
+import inkapplications.spondee.structure.Ratio
+import inkapplications.spondee.structure.Square
 /**
- * Power per unit area.
+ * Unit of power density by area.
  */
-@JvmInline
-value class Irradiance internal constructor(override val rawValue: Double): DoubleMeasurement<Irradiance> {
-    override val storedUnit: DoubleUnit<Irradiance> get() = WattsPerSquareMeter
-}
-
-object WattsPerSquareMeter: StoredUnit<Irradiance>(
-    symbol = "W/m^2"
-) {
-    override fun of(value: Number): Irradiance = Irradiance(value.toDouble())
-}
+typealias Irradiance = Ratio<Power, Square<Length>>

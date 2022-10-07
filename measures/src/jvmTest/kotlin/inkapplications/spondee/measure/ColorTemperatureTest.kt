@@ -1,20 +1,18 @@
 package inkapplications.spondee.measure
 
-import inkapplications.spondee.testConvert
+import inkapplications.spondee.measure.metric.kelvin
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class ColorTemperatureTest {
     @Test
     fun miredConversions() {
-        testConvert(123, KelvinColorTemperature) {
-            equals(8130.08130081, Mireds)
-        }
+        assertEquals(2000.0, 500.mireds.toKelvin().value.toDouble(), 1e-15)
+        assertEquals(500.0, 2000.kelvin.toMireds().value.toDouble(), 1e-15)
     }
 
     @Test
-    fun formats() {
-        assertEquals("0.0K", KelvinColorTemperature.of(0).let { KelvinColorTemperature.format(it) })
-        assertEquals("0.0K^-1", Mireds.of(0).let { Mireds.format(it) })
+    fun format() {
+        assertEquals("123MK^-1", 123.mireds.toString())
     }
 }
