@@ -4,6 +4,9 @@ subprojects {
     tasks.withType(Test::class) {
         testLogging.exceptionFormat = TestExceptionFormat.FULL
     }
+    repositories {
+        mavenCentral()
+    }
 }
 
 tasks.create("zipPublications", Zip::class) {
