@@ -11,6 +11,7 @@ kotlin {
     jvm()
 
     ios()
+    iosArm32()
     watchos()
     tvos()
     macosX64()
