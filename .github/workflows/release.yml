@@ -120,6 +120,10 @@ jobs:
                 run: ./gradlew publishMingwX64PublicationToBuildRepository --project-prop version=${GITHUB_TAG/refs\/tags\//}
                 shell: bash
             -
+                name: Build Windows 32 Publication
+                run: ./gradlew publishMingwX86PublicationToBuildRepository --project-prop version=${GITHUB_TAG/refs\/tags\//}
+                shell: bash
+            -
                 name: Zip All Publications
                 run: ./gradlew zipPublications
             -
@@ -152,20 +156,17 @@ jobs:
                     java-version: 11
                     distribution: adopt-openj9
             -
-                name: Build ios Publication
-                run: ./gradlew publishIosPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+                name: Build iOS Publication
+                run: ./gradlew publishIosArm32PublicationToBuildRepository publishIosArm64PublicationToBuildRepository publishIosX64PublicationToBuildRepository publishIosSimulatorArm64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
-                name: Build watchos Publication
-                run: ./gradlew publishWatchosPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+                name: Build watchOS Publication
+                run: ./gradlew publishWatchosArm32PublicationToBuildRepository publishWatchosArm64PublicationToBuildRepository publishWatchosX86PublicationToBuildRepository publishWatchosX64PublicationToBuildRepository publishWatchosSimulatorArm64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
-                name: Build tvos Publication
-                run: ./gradlew publishTvosPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+                name: Build tvOS Publication
+                run: ./gradlew publishTvosArm64PublicationToBuildRepository publishTvosX64PublicationToBuildRepository publishTvosSimulatorArm64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
-                name: Build MacOS Arm64 Publication
-                run: ./gradlew publishMacosArm64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
-            -
-                name: Build MacOS X64 Publication
-                run: ./gradlew publishMacosX64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+                name: Build MacOS Publication
+                run: ./gradlew publishMacosX64PublicationToBuildRepository publishMacosArm64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
                 name: Zip All Publications
                 run: ./gradlew zipPublications
