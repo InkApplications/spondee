@@ -58,10 +58,10 @@ jobs:
                     ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
                 run: >
                     ./gradlew \
-                    publishKotlinMultiplatformPublicationToMavenCentralRepository \
-                    publishJvmPublicationToMavenCentralRepository \
-                    publishJsPublicationToMavenCentralRepository \
-                    publishWasmPublicationToMavenCentralRepository \
+                    publishKotlinMultiplatformPublicationToMavenCentralRepository
+                    publishJvmPublicationToMavenCentralRepository
+                    publishJsPublicationToMavenCentralRepository
+                    publishWasmPublicationToMavenCentralRepository
                     -Pversion=${GITHUB_TAG/refs\/tags\//}
 
     linux:
@@ -111,11 +111,11 @@ jobs:
                     ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
                 run: >
                     ./gradlew \
-                    publishLinuxX64PublicationToMavenCentralRepository \
-                    publishLinuxMips32PublicationToMavenCentralRepository \
-                    publishLinuxMipsel32PublicationToMavenCentralRepository \
-                    publishLinuxArm32HfpPublicationToMavenCentralRepository \
-                    publishLinuxArm64PublicationToMavenCentralRepository \
+                    publishLinuxX64PublicationToMavenCentralRepository
+                    publishLinuxMips32PublicationToMavenCentralRepository
+                    publishLinuxMipsel32PublicationToMavenCentralRepository
+                    publishLinuxArm32HfpPublicationToMavenCentralRepository
+                    publishLinuxArm64PublicationToMavenCentralRepository
                     -Pversion=${GITHUB_TAG/refs\/tags\//}
 
     windows:
@@ -159,8 +159,8 @@ jobs:
                 shell: bash
                 run: >
                     ./gradlew \
-                    publishMingwX64PublicationToMavenCentralRepository \
-                    publishMingwX86PublicationToMavenCentralRepository \
+                    publishMingwX64PublicationToMavenCentralRepository
+                    publishMingwX86PublicationToMavenCentralRepository
                     --project-prop version=${GITHUB_TAG/refs\/tags\//}
     macos:
         runs-on: macos-latest
@@ -178,38 +178,38 @@ jobs:
                 name: Build iOS Publication
                 run: >
                     ./gradlew \
-                    publishIosArm32PublicationToBuildRepository \
-                    publishIosArm64PublicationToBuildRepository \
-                    publishIosX64PublicationToBuildRepository \
-                    publishIosSimulatorArm64PublicationToBuildRepository \
+                    publishIosArm32PublicationToBuildRepository
+                    publishIosArm64PublicationToBuildRepository
+                    publishIosX64PublicationToBuildRepository
+                    publishIosSimulatorArm64PublicationToBuildRepository
                     -Pversion=${GITHUB_TAG/refs\/tags\//}
 
             -
                 name: Build watchOS Publication
                 run: >
                     ./gradlew \
-                    publishWatchosArm32PublicationToBuildRepository \
-                    publishWatchosArm64PublicationToBuildRepository \
-                    publishWatchosX86PublicationToBuildRepository \
-                    publishWatchosX64PublicationToBuildRepository \
-                    publishWatchosSimulatorArm64PublicationToBuildRepository \
+                    publishWatchosArm32PublicationToBuildRepository
+                    publishWatchosArm64PublicationToBuildRepository
+                    publishWatchosX86PublicationToBuildRepository
+                    publishWatchosX64PublicationToBuildRepository
+                    publishWatchosSimulatorArm64PublicationToBuildRepository
                     -Pversion=${GITHUB_TAG/refs\/tags\//}
 
             -
                 name: Build tvOS Publication
                 run: >
                     ./gradlew \
-                    publishTvosArm64PublicationToBuildRepository \
-                    publishTvosX64PublicationToBuildRepository \
-                    publishTvosSimulatorArm64PublicationToBuildRepository \
+                    publishTvosArm64PublicationToBuildRepository
+                    publishTvosX64PublicationToBuildRepository
+                    publishTvosSimulatorArm64PublicationToBuildRepository
                     -Pversion=${GITHUB_TAG/refs\/tags\//}
 
             -
                 name: Build MacOS Publication
                 run: >
                     ./gradlew \
-                    publishMacosX64PublicationToBuildRepository \
-                    publishMacosArm64PublicationToBuildRepository \
+                    publishMacosX64PublicationToBuildRepository
+                    publishMacosArm64PublicationToBuildRepository
                     -Pversion=${GITHUB_TAG/refs\/tags\//}
 
             -
@@ -232,18 +232,18 @@ jobs:
                     ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
                 run: >
                     ./gradlew \
-                    publishIosArm32PublicationToMavenCentralRepository \
-                    publishIosArm64PublicationToMavenCentralRepository \
-                    publishIosX64PublicationToMavenCentralRepository \
-                    publishIosSimulatorArm64PublicationToMavenCentralRepository \
-                    publishWatchosArm32PublicationToMavenCentralRepository \
-                    publishWatchosArm64PublicationToMavenCentralRepository \
-                    publishWatchosX86PublicationToMavenCentralRepository \
-                    publishWatchosX64PublicationToMavenCentralRepository \
-                    publishWatchosSimulatorArm64PublicationToMavenCentralRepository \
-                    publishTvosArm64PublicationToMavenCentralRepository \
-                    publishTvosX64PublicationToMavenCentralRepository \
-                    publishTvosSimulatorArm64PublicationToMavenCentralRepository \
-                    publishMacosX64PublicationToMavenCentralRepository \
-                    publishMacosArm64PublicationToMavenCentralRepository \
+                    publishIosArm32PublicationToMavenCentralRepository
+                    publishIosArm64PublicationToMavenCentralRepository
+                    publishIosX64PublicationToMavenCentralRepository
+                    publishIosSimulatorArm64PublicationToMavenCentralRepository
+                    publishWatchosArm32PublicationToMavenCentralRepository
+                    publishWatchosArm64PublicationToMavenCentralRepository
+                    publishWatchosX86PublicationToMavenCentralRepository
+                    publishWatchosX64PublicationToMavenCentralRepository
+                    publishWatchosSimulatorArm64PublicationToMavenCentralRepository
+                    publishTvosArm64PublicationToMavenCentralRepository
+                    publishTvosX64PublicationToMavenCentralRepository
+                    publishTvosSimulatorArm64PublicationToMavenCentralRepository
+                    publishMacosX64PublicationToMavenCentralRepository
+                    publishMacosArm64PublicationToMavenCentralRepository
                     -Pversion=${GITHUB_TAG/refs\/tags\//}
