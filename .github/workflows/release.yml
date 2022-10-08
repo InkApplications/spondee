@@ -57,7 +57,7 @@ jobs:
                     ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
                     ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
                 run: >
-                    ./gradlew \
+                    ./gradlew
                     publishKotlinMultiplatformPublicationToMavenCentralRepository
                     publishJvmPublicationToMavenCentralRepository
                     publishJsPublicationToMavenCentralRepository
@@ -110,7 +110,7 @@ jobs:
                     ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
                     ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
                 run: >
-                    ./gradlew \
+                    ./gradlew
                     publishLinuxX64PublicationToMavenCentralRepository
                     publishLinuxMips32PublicationToMavenCentralRepository
                     publishLinuxMipsel32PublicationToMavenCentralRepository
@@ -158,7 +158,7 @@ jobs:
                     ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
                 shell: bash
                 run: >
-                    ./gradlew \
+                    ./gradlew
                     publishMingwX64PublicationToMavenCentralRepository
                     publishMingwX86PublicationToMavenCentralRepository
                     --project-prop version=${GITHUB_TAG/refs\/tags\//}
@@ -177,7 +177,7 @@ jobs:
             -
                 name: Build iOS Publication
                 run: >
-                    ./gradlew \
+                    ./gradlew
                     publishIosArm32PublicationToBuildRepository
                     publishIosArm64PublicationToBuildRepository
                     publishIosX64PublicationToBuildRepository
@@ -187,7 +187,7 @@ jobs:
             -
                 name: Build watchOS Publication
                 run: >
-                    ./gradlew \
+                    ./gradlew
                     publishWatchosArm32PublicationToBuildRepository
                     publishWatchosArm64PublicationToBuildRepository
                     publishWatchosX86PublicationToBuildRepository
@@ -198,7 +198,7 @@ jobs:
             -
                 name: Build tvOS Publication
                 run: >
-                    ./gradlew \
+                    ./gradlew
                     publishTvosArm64PublicationToBuildRepository
                     publishTvosX64PublicationToBuildRepository
                     publishTvosSimulatorArm64PublicationToBuildRepository
@@ -207,7 +207,7 @@ jobs:
             -
                 name: Build MacOS Publication
                 run: >
-                    ./gradlew \
+                    ./gradlew
                     publishMacosX64PublicationToBuildRepository
                     publishMacosArm64PublicationToBuildRepository
                     -Pversion=${GITHUB_TAG/refs\/tags\//}
@@ -231,7 +231,7 @@ jobs:
                     ORG_GRADLE_PROJECT_signingKey: ${{ secrets.PGP_INK_CI_PRIVATE }}
                     ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_INK_CI_PASSWORD }}
                 run: >
-                    ./gradlew \
+                    ./gradlew
                     publishIosArm32PublicationToMavenCentralRepository
                     publishIosArm64PublicationToMavenCentralRepository
                     publishIosX64PublicationToMavenCentralRepository
