@@ -36,6 +36,9 @@ jobs:
                 name: Build JS Publication
                 run: ./gradlew publishJsPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
+                name: Build Wasm Publication
+                run: ./gradlew publishWasmPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+            -
                 name: Zip All Publications
                 run: ./gradlew zipPublications
             -
@@ -72,6 +75,9 @@ jobs:
             -
                 name: Build Linux Mips 32 Publication
                 run: ./gradlew publishLinuxMips32PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+            -
+                name: Build Linux little-endian Mips 32 Publication
+                run: ./gradlew publishLinuxMipsel32PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
                 name: Build Linux ARM Publication
                 run: ./gradlew publishLinuxArm32HfpPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
@@ -145,6 +151,18 @@ jobs:
                 with:
                     java-version: 11
                     distribution: adopt-openj9
+            -
+                name: Build ios Publication
+                run: ./gradlew publishIosPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+            -
+                name: Build watchos Publication
+                run: ./gradlew publishWatchosPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+            -
+                name: Build tvos Publication
+                run: ./gradlew publishTvosPublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
+            -
+                name: Build MacOS Arm64 Publication
+                run: ./gradlew publishMacosArm64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}
             -
                 name: Build MacOS X64 Publication
                 run: ./gradlew publishMacosX64PublicationToBuildRepository -Pversion=${GITHUB_TAG/refs\/tags\//}

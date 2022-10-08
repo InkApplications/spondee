@@ -9,16 +9,31 @@ repositories {
 
 kotlin {
     jvm()
+
+    ios()
+    watchos()
+    tvos()
+    macosX64()
+    macosArm64()
+
+    linuxArm64()
+    linuxArm32Hfp()
+    linuxMips32()
+    linuxMipsel32()
+    linuxX64()
+
+    mingwX64()
+    macosX64()
+
+    wasm {
+        browser()
+        nodejs()
+        d8()
+    }
     js {
         nodejs()
         browser()
     }
-    linuxArm64()
-    linuxArm32Hfp()
-    linuxMips32()
-    linuxX64()
-    mingwX64()
-    macosX64()
 
     sourceSets {
         val jvmTest by getting {
