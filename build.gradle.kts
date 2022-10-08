@@ -1,5 +1,11 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
 subprojects {
     tasks.withType(Test::class) {
         testLogging.exceptionFormat = TestExceptionFormat.FULL
