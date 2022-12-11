@@ -1,16 +1,16 @@
 Changes
 =======
 
-1.0
----
+1.0.0
+-----
 
 ### Added
 
- - `Percentage` Unit
- - `Level` Unit
- - `GeoLine` Units for direction: `Latitude` / `Longitude`
- - `Cardinal` enum for indicating a N/S/E/W direction.
- - `GeoCoordinates` added for a lat/lng position.
- - `Length` unit added
- - `Temperature` for measuring heat
- - `ColorTemperature` added for wrapping `Temperature` as a lighting indicator.
+ - Initial structures for Dimensions, Ratios, Squares and symbolized units.
+ - Measurements for `ColorTemperature`, `Length`, `Mass`, `Power`,
+   `Pressure`, `Speed` and `Temperature`
+ - `DurationDimension` was added to wrap kotlin timestamps as a dimension.
+ - `Irradiance` alias added as a shortcut for power/area density.
+ - Scalar units for `Level` and `Percentage`.
+ - Spacial units for `Angle`, `Cardinal`, `Coordinates`, `GeoCoordinates`
+    and `GeoLine`.
