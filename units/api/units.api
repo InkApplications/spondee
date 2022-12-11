@@ -1,0 +1,956 @@
+public final class inkapplications/spondee/format/NumberFormatKt {
+}
+
+public abstract interface annotation class inkapplications/spondee/format/SimpleNumberFormats : java/lang/annotation/Annotation {
+}
+
+public abstract interface class inkapplications/spondee/measure/ColorTemperature {
+	public abstract fun toKelvin-1XJsV1Q ()Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/ColorTemperatureKt {
+	public static final fun getMired ()Ljava/lang/Number;
+	public static final fun getMireds (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toMireds (Linkapplications/spondee/measure/ColorTemperature;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/DurationDimension : inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (J)Linkapplications/spondee/measure/DurationDimension;
+	public static fun constructor-impl (J)J
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (JLjava/lang/Object;)Z
+	public static final fun equals-impl0 (JJ)Z
+	public final fun getDuration-UwyO8pc ()J
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (J)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public static fun getValue-impl (J)Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (J)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (J)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()J
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public static fun withValue-4u0XqKI (JLjava/lang/Number;)J
+	public fun withValue-4u0XqKI (Ljava/lang/Number;)J
+}
+
+public final class inkapplications/spondee/measure/DurationDimensionKt {
+	public static final fun toDimension-LRDsOJo (J)J
+}
+
+public abstract interface class inkapplications/spondee/measure/Length {
+	public abstract fun toMeters-_Pq2wG0 ()Ljava/lang/Number;
+}
+
+public abstract interface class inkapplications/spondee/measure/Mass {
+	public abstract fun toGrams-kqPuZpw ()Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/Mireds : inkapplications/spondee/measure/ColorTemperature, inkapplications/spondee/structure/Dimension, inkapplications/spondee/structure/Symbolized {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/Mireds;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toKelvin-1XJsV1Q ()Ljava/lang/Number;
+	public static fun toKelvin-1XJsV1Q (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-yHsAxtM (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-yHsAxtM (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public abstract interface class inkapplications/spondee/measure/Power {
+	public abstract fun toWatts-QjAy27c ()Ljava/lang/Number;
+}
+
+public abstract interface class inkapplications/spondee/measure/Pressure {
+	public abstract fun toPascals-dSBZL8U ()Ljava/lang/Number;
+}
+
+public abstract interface class inkapplications/spondee/measure/Temperature {
+	public abstract fun toKelvin-1XJsV1Q ()Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/Bar : inkapplications/spondee/measure/Pressure, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/Bar;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toPascals-dSBZL8U ()Ljava/lang/Number;
+	public static fun toPascals-dSBZL8U (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-NIg9GiM (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-NIg9GiM (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/Celsius : inkapplications/spondee/measure/Temperature, inkapplications/spondee/structure/Dimension, inkapplications/spondee/structure/Symbolized {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/Celsius;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toKelvin-1XJsV1Q ()Ljava/lang/Number;
+	public static fun toKelvin-1XJsV1Q (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-lY74ROY (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-lY74ROY (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/Grams : inkapplications/spondee/measure/Mass, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/Grams;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toGrams-kqPuZpw ()Ljava/lang/Number;
+	public static fun toGrams-kqPuZpw (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-GCFqHr8 (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-GCFqHr8 (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/Kelvin : inkapplications/spondee/measure/ColorTemperature, inkapplications/spondee/measure/Temperature, inkapplications/spondee/structure/Dimension, inkapplications/spondee/structure/Symbolized {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/Kelvin;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toKelvin-1XJsV1Q ()Ljava/lang/Number;
+	public static fun toKelvin-1XJsV1Q (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-f0zWc30 (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-f0zWc30 (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/LengthsKt {
+	public static final fun getCentimeters (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getKilometers (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getMeter ()Ljava/lang/Number;
+	public static final fun getMeters (Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/MassKt {
+	public static final fun getGram ()Ljava/lang/Number;
+	public static final fun getGrams (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getKilogram ()Ljava/lang/Number;
+	public static final fun getKilograms (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getMetricTon ()Ljava/lang/Number;
+	public static final fun getMetricTons (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toMetricTons (Linkapplications/spondee/measure/Mass;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/Meters : inkapplications/spondee/measure/Length, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/Meters;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toMeters-_Pq2wG0 ()Ljava/lang/Number;
+	public static fun toMeters-_Pq2wG0 (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-iZ_WjuE (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-iZ_WjuE (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/MetricTons : inkapplications/spondee/measure/Mass, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/MetricTons;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toGrams-kqPuZpw ()Ljava/lang/Number;
+	public static fun toGrams-kqPuZpw (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-VL0uf18 (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-VL0uf18 (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/MillimetreMercury : inkapplications/spondee/measure/Pressure, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/MillimetreMercury;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toPascals-dSBZL8U ()Ljava/lang/Number;
+	public static fun toPascals-dSBZL8U (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-DdfsLFs (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-DdfsLFs (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/Pascals : inkapplications/spondee/measure/Pressure, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/Pascals;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toPascals-dSBZL8U ()Ljava/lang/Number;
+	public static fun toPascals-dSBZL8U (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-kfg1nWE (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-kfg1nWE (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/PowersKt {
+	public static final fun getWatt ()Ljava/lang/Number;
+	public static final fun getWatts (Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/PressuresKt {
+	public static final fun getBar (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getMillimetreMercury (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getMmHg (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getPascal ()Ljava/lang/Number;
+	public static final fun getPascals (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toBar (Linkapplications/spondee/measure/Pressure;)Ljava/lang/Number;
+	public static final fun toMillimetreMercury (Linkapplications/spondee/measure/Pressure;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/SpeedsKt {
+	public static final fun getKilometersPerHour (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
+	public static final fun getMetersPerSecond (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
+}
+
+public final class inkapplications/spondee/measure/metric/TemperaturesKt {
+	public static final fun getCelsius (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getKelvin (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toCelsius (Linkapplications/spondee/measure/Temperature;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/metric/Watts : inkapplications/spondee/measure/Power, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/Watts;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun toWatts-QjAy27c ()Ljava/lang/Number;
+	public static fun toWatts-QjAy27c (Ljava/lang/Number;)Ljava/lang/Number;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue--H_mcSc (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue--H_mcSc (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/Drams : inkapplications/spondee/measure/Mass, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Drams;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toGrams-kqPuZpw ()Ljava/lang/Number;
+	public static fun toGrams-kqPuZpw (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-ObuyDro (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-ObuyDro (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/Fahrenheit : inkapplications/spondee/measure/Temperature, inkapplications/spondee/structure/Dimension, inkapplications/spondee/structure/Symbolized {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Fahrenheit;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toKelvin-1XJsV1Q ()Ljava/lang/Number;
+	public static fun toKelvin-1XJsV1Q (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-ivcZQlw (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-ivcZQlw (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/Feet : inkapplications/spondee/measure/Length, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Feet;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toMeters-_Pq2wG0 ()Ljava/lang/Number;
+	public static fun toMeters-_Pq2wG0 (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-sSKwDks (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-sSKwDks (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/Grains : inkapplications/spondee/measure/Mass, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Grains;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toGrams-kqPuZpw ()Ljava/lang/Number;
+	public static fun toGrams-kqPuZpw (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-4adp_t0 (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-4adp_t0 (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/Inches : inkapplications/spondee/measure/Length, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Inches;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toMeters-_Pq2wG0 ()Ljava/lang/Number;
+	public static fun toMeters-_Pq2wG0 (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-hzUZNrI (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-hzUZNrI (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/LengthsKt {
+	public static final fun getFeet (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getFoot ()Ljava/lang/Number;
+	public static final fun getInch ()Ljava/lang/Number;
+	public static final fun getInches (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getMile ()Ljava/lang/Number;
+	public static final fun getMiles (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getThou (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getYard ()Ljava/lang/Number;
+	public static final fun getYards (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toFeet (Linkapplications/spondee/measure/Length;)Ljava/lang/Number;
+	public static final fun toInches (Linkapplications/spondee/measure/Length;)Ljava/lang/Number;
+	public static final fun toMiles (Linkapplications/spondee/measure/Length;)Ljava/lang/Number;
+	public static final fun toYards (Linkapplications/spondee/measure/Length;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/LongTons : inkapplications/spondee/measure/Mass, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/LongTons;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toGrams-kqPuZpw ()Ljava/lang/Number;
+	public static fun toGrams-kqPuZpw (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-q6ggO1I (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-q6ggO1I (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/MassKt {
+	public static final fun getDram ()Ljava/lang/Number;
+	public static final fun getDrams (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getGrain ()Ljava/lang/Number;
+	public static final fun getGrains (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getLongTon ()Ljava/lang/Number;
+	public static final fun getLongTons (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getOunce ()Ljava/lang/Number;
+	public static final fun getOunces (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getPound ()Ljava/lang/Number;
+	public static final fun getPounds (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getShortHundredweight ()Ljava/lang/Number;
+	public static final fun getShortHundredweights (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getShortTon ()Ljava/lang/Number;
+	public static final fun getShortTons (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toDrams (Linkapplications/spondee/measure/Mass;)Ljava/lang/Number;
+	public static final fun toGrains (Linkapplications/spondee/measure/Mass;)Ljava/lang/Number;
+	public static final fun toLongTons (Linkapplications/spondee/measure/Mass;)Ljava/lang/Number;
+	public static final fun toOunces (Linkapplications/spondee/measure/Mass;)Ljava/lang/Number;
+	public static final fun toPounds (Linkapplications/spondee/measure/Mass;)Ljava/lang/Number;
+	public static final fun toShortHundredweights (Linkapplications/spondee/measure/Mass;)Ljava/lang/Number;
+	public static final fun toShortTons (Linkapplications/spondee/measure/Mass;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/Miles : inkapplications/spondee/measure/Length, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Miles;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toMeters-_Pq2wG0 ()Ljava/lang/Number;
+	public static fun toMeters-_Pq2wG0 (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-HvMDq6Q (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-HvMDq6Q (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/Ounces : inkapplications/spondee/measure/Mass, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Ounces;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toGrams-kqPuZpw ()Ljava/lang/Number;
+	public static fun toGrams-kqPuZpw (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-omRc9qw (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-omRc9qw (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/Pounds : inkapplications/spondee/measure/Mass, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Pounds;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toGrams-kqPuZpw ()Ljava/lang/Number;
+	public static fun toGrams-kqPuZpw (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-PrKmAq8 (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-PrKmAq8 (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/PoundsPerSquareInch : inkapplications/spondee/measure/Pressure, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/PoundsPerSquareInch;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toPascals-dSBZL8U ()Ljava/lang/Number;
+	public static fun toPascals-dSBZL8U (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-4rYgMiU (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-4rYgMiU (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/PressuresKt {
+	public static final fun getPSI ()Ljava/lang/Number;
+	public static final fun getPoundPerSquareInch ()Ljava/lang/Number;
+	public static final fun getPoundsPerSquareInch (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getPsi (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toPoundsPerSquareInch (Linkapplications/spondee/measure/Pressure;)Ljava/lang/Number;
+	public static final fun toPsi (Linkapplications/spondee/measure/Pressure;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/ShortHundredweights : inkapplications/spondee/measure/Mass, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/ShortHundredweights;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toGrams-kqPuZpw ()Ljava/lang/Number;
+	public static fun toGrams-kqPuZpw (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-1QYuN9g (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-1QYuN9g (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/ShortTons : inkapplications/spondee/measure/Mass, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/ShortTons;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toGrams-kqPuZpw ()Ljava/lang/Number;
+	public static fun toGrams-kqPuZpw (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-sz-fGKY (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-sz-fGKY (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/SpeedsKt {
+	public static final fun getFeetPerSecond (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
+	public static final fun getMilesPerHour (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
+}
+
+public final class inkapplications/spondee/measure/us/TemperaturesKt {
+	public static final fun getFahrenheit (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toFahrenheit (Linkapplications/spondee/measure/Temperature;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/measure/us/Yards : inkapplications/spondee/measure/Length, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Yards;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toMeters-_Pq2wG0 ()Ljava/lang/Number;
+	public static fun toMeters-_Pq2wG0 (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-HBvfTrc (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-HBvfTrc (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/scalar/Bels : inkapplications/spondee/scalar/Level, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/scalar/Bels;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toBels-cQoGsgY ()Ljava/lang/Number;
+	public static fun toBels-cQoGsgY (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-DsacxaA (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-DsacxaA (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/scalar/DecimalPercentage : inkapplications/spondee/scalar/Percentage, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/scalar/DecimalPercentage;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toDecimal-EIyvUfs ()Ljava/lang/Number;
+	public static fun toDecimal-EIyvUfs (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-jPjPC6U (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-jPjPC6U (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public abstract interface class inkapplications/spondee/scalar/Level {
+	public abstract fun toBels-cQoGsgY ()Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/scalar/LevelKt {
+	public static final fun getBels (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getDecibels (Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public abstract interface class inkapplications/spondee/scalar/Percentage {
+	public abstract fun toDecimal-EIyvUfs ()Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/scalar/PercentageKt {
+	public static final fun getDecimalPercentage (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getPercent (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toWholePercentage (Linkapplications/spondee/scalar/Percentage;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/scalar/WholePercentage : inkapplications/spondee/scalar/Percentage, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/scalar/WholePercentage;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toDecimal-EIyvUfs ()Ljava/lang/Number;
+	public static fun toDecimal-EIyvUfs (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-1TgCxEQ (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-1TgCxEQ (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public abstract interface class inkapplications/spondee/spatial/Angle {
+	public abstract fun toRadians-oxf00Ok ()Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/spatial/AngleKt {
+	public static final fun getDegrees (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun getRadians (Ljava/lang/Number;)Ljava/lang/Number;
+	public static final fun toDegrees (Linkapplications/spondee/spatial/Angle;)Ljava/lang/Number;
+	public static final fun toNearestCardinal (Linkapplications/spondee/spatial/Angle;)Linkapplications/spondee/spatial/Cardinal;
+}
+
+public final class inkapplications/spondee/spatial/Cardinal : java/lang/Enum {
+	public static final field East Linkapplications/spondee/spatial/Cardinal;
+	public static final field North Linkapplications/spondee/spatial/Cardinal;
+	public static final field South Linkapplications/spondee/spatial/Cardinal;
+	public static final field West Linkapplications/spondee/spatial/Cardinal;
+	public final fun getSymbol ()C
+	public fun toString ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Linkapplications/spondee/spatial/Cardinal;
+	public static fun values ()[Linkapplications/spondee/spatial/Cardinal;
+}
+
+public final class inkapplications/spondee/spatial/CardinalKt {
+	public static final fun toAngle (Linkapplications/spondee/spatial/Cardinal;)Linkapplications/spondee/spatial/Angle;
+	public static final fun toCardinal (C)Linkapplications/spondee/spatial/Cardinal;
+	public static final fun toDegrees (Linkapplications/spondee/spatial/Cardinal;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/spatial/Coordinates {
+	public fun <init> (Ljava/lang/Number;Ljava/lang/Number;)V
+	public final fun component1 ()Ljava/lang/Number;
+	public final fun component2 ()Ljava/lang/Number;
+	public final fun copy (Ljava/lang/Number;Ljava/lang/Number;)Linkapplications/spondee/spatial/Coordinates;
+	public static synthetic fun copy$default (Linkapplications/spondee/spatial/Coordinates;Ljava/lang/Number;Ljava/lang/Number;ILjava/lang/Object;)Linkapplications/spondee/spatial/Coordinates;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getX ()Ljava/lang/Number;
+	public final fun getY ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class inkapplications/spondee/spatial/Degrees : inkapplications/spondee/spatial/Angle, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/spatial/Degrees;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toRadians-oxf00Ok ()Ljava/lang/Number;
+	public static fun toRadians-oxf00Ok (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-9XhTU2Q (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-9XhTU2Q (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/spatial/GeoCoordinates {
+	public fun <init> (Linkapplications/spondee/spatial/Latitude;Linkapplications/spondee/spatial/Longitude;)V
+	public final fun component1 ()Linkapplications/spondee/spatial/Latitude;
+	public final fun component2 ()Linkapplications/spondee/spatial/Longitude;
+	public final fun copy (Linkapplications/spondee/spatial/Latitude;Linkapplications/spondee/spatial/Longitude;)Linkapplications/spondee/spatial/GeoCoordinates;
+	public static synthetic fun copy$default (Linkapplications/spondee/spatial/GeoCoordinates;Linkapplications/spondee/spatial/Latitude;Linkapplications/spondee/spatial/Longitude;ILjava/lang/Object;)Linkapplications/spondee/spatial/GeoCoordinates;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getLatitude ()Linkapplications/spondee/spatial/Latitude;
+	public final fun getLongitude ()Linkapplications/spondee/spatial/Longitude;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class inkapplications/spondee/spatial/GeoLine {
+	public abstract fun getAsDecimal ()D
+	public abstract fun getCardinal ()Linkapplications/spondee/spatial/Cardinal;
+	public abstract fun getDegreesComponent ()I
+	public abstract fun getMinutesComponent ()I
+	public abstract fun getSecondsComponent ()F
+}
+
+public final class inkapplications/spondee/spatial/GeoLineKt {
+	public static final fun geoLineOf (IIFLinkapplications/spondee/spatial/Cardinal;)Linkapplications/spondee/spatial/GeoLine;
+	public static final fun getLatitude (Ljava/lang/Number;)Linkapplications/spondee/spatial/Latitude;
+	public static final fun getLongitude (Ljava/lang/Number;)Linkapplications/spondee/spatial/Longitude;
+	public static final fun latitudeOf (IIFLinkapplications/spondee/spatial/Cardinal;)Linkapplications/spondee/spatial/Latitude;
+	public static final fun longitudeOf (IIFLinkapplications/spondee/spatial/Cardinal;)Linkapplications/spondee/spatial/Longitude;
+}
+
+public abstract interface class inkapplications/spondee/spatial/Latitude : inkapplications/spondee/spatial/GeoLine {
+}
+
+public abstract interface class inkapplications/spondee/spatial/Longitude : inkapplications/spondee/spatial/GeoLine {
+}
+
+public final class inkapplications/spondee/spatial/Radians : inkapplications/spondee/spatial/Angle, inkapplications/spondee/structure/Dimension {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/spatial/Radians;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toRadians-oxf00Ok ()Ljava/lang/Number;
+	public static fun toRadians-oxf00Ok (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-Zx6l3uY (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-Zx6l3uY (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
+public abstract interface class inkapplications/spondee/structure/Dimension : inkapplications/spondee/structure/Symbolized {
+	public abstract fun getValue ()Ljava/lang/Number;
+	public abstract fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+}
+
+public final class inkapplications/spondee/structure/DimensionKt {
+	public static final fun compareTo (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)I
+	public static final fun compareTo (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)I
+	public static final fun convert (Linkapplications/spondee/structure/Dimension;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+	public static final fun div (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
+	public static final fun div (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun format (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;IZZC)Ljava/lang/String;
+	public static synthetic fun format$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;IZZCILjava/lang/Object;)Ljava/lang/String;
+	public static final fun minus (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
+	public static final fun minus (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun plus (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
+	public static final fun plus (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun rem (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
+	public static final fun rem (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun times (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
+	public static final fun times (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun value (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;)Ljava/lang/Number;
+	public static synthetic fun value$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/structure/DimensionScale {
+	public fun <init> (Ljava/lang/Number;Ljava/lang/String;Z)V
+	public synthetic fun <init> (Ljava/lang/Number;Ljava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/Number;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Z
+	public final fun copy (Ljava/lang/Number;Ljava/lang/String;Z)Linkapplications/spondee/structure/DimensionScale;
+	public static synthetic fun copy$default (Linkapplications/spondee/structure/DimensionScale;Ljava/lang/Number;Ljava/lang/String;ZILjava/lang/Object;)Linkapplications/spondee/structure/DimensionScale;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFactor ()Ljava/lang/Number;
+	public final fun getPrefix ()Ljava/lang/String;
+	public final fun getPrefixPadding ()Z
+	public final fun getSymbol ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class inkapplications/spondee/structure/DimensionScaleKt {
+	public static final fun getAtto ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getCenti ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getDeci ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getDeka ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getExa ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getFemto ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getGiga ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getHecto ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getHundreths ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getKilo ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getMega ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getMicro ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getMilli ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getNano ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getNominal ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getPeta ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getPico ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getTera ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getThou ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getYocto ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getYotta ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getZepto ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun getZetta ()Linkapplications/spondee/structure/DimensionScale;
+	public static final fun scale (Ljava/lang/Number;Linkapplications/spondee/structure/DimensionScale;)Ljava/lang/Number;
+}
+
+public abstract interface class inkapplications/spondee/structure/Ratio {
+	public abstract fun getDenominator ()Ljava/lang/Object;
+	public abstract fun getNumerator ()Ljava/lang/Object;
+	public abstract fun transformDenominator (Lkotlin/jvm/functions/Function1;)Linkapplications/spondee/structure/Ratio;
+	public abstract fun transformNumerator (Lkotlin/jvm/functions/Function1;)Linkapplications/spondee/structure/Ratio;
+}
+
+public final class inkapplications/spondee/structure/RatioKt {
+	public static final fun densityFormat (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;IZZC)Ljava/lang/String;
+	public static synthetic fun densityFormat$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;IZZCILjava/lang/Object;)Ljava/lang/String;
+	public static final fun densityValue (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;)Ljava/lang/Number;
+	public static synthetic fun densityValue$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)Ljava/lang/Number;
+	public static final fun div (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Ratio;
+	public static final fun format (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;IZZC)Ljava/lang/String;
+	public static synthetic fun format$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;IZZCILjava/lang/Object;)Ljava/lang/String;
+	public static final fun per (Ljava/lang/Object;Ljava/lang/Object;)Linkapplications/spondee/structure/Ratio;
+	public static final fun ratioOf (Ljava/lang/Object;Ljava/lang/Object;)Linkapplications/spondee/structure/Ratio;
+	public static final fun value (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;)Ljava/lang/Number;
+	public static synthetic fun value$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)Ljava/lang/Number;
+}
+
+public final class inkapplications/spondee/structure/Square {
+	public fun <init> (Ljava/lang/Object;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun copy (Ljava/lang/Object;)Linkapplications/spondee/structure/Square;
+	public static synthetic fun copy$default (Linkapplications/spondee/structure/Square;Ljava/lang/Object;ILjava/lang/Object;)Linkapplications/spondee/structure/Square;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getValue ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class inkapplications/spondee/structure/SquareKt {
+	public static final fun format (Linkapplications/spondee/structure/Square;Linkapplications/spondee/structure/DimensionScale;IZZC)Ljava/lang/String;
+	public static synthetic fun format$default (Linkapplications/spondee/structure/Square;Linkapplications/spondee/structure/DimensionScale;IZZCILjava/lang/Object;)Ljava/lang/String;
+}
+
+public abstract interface class inkapplications/spondee/structure/Symbolized {
+	public abstract fun getSymbol ()Ljava/lang/String;
+}
+
