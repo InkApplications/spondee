@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("maven-publish")
+    id("org.jetbrains.kotlinx.binary-compatibility-validator")
 }
 
 repositories {
@@ -56,6 +57,10 @@ kotlin {
             }
         }
     }
+}
+
+apiValidation {
+    nonPublicMarkers.add("inkapplications.spondee.format.SimpleNumberFormats")
 }
 
 publishing {
