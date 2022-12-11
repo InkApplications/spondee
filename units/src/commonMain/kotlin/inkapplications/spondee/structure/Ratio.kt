@@ -4,6 +4,9 @@ import inkapplications.spondee.format.formatDecimal
 import kotlin.jvm.JvmName
 import kotlin.math.pow
 
+/**
+ * A ratio between to values.
+ */
 interface Ratio<N, D> {
     val numerator: N
     val denominator: D
@@ -12,9 +15,6 @@ interface Ratio<N, D> {
     fun <T> transformDenominator(transform: (D) -> T): Ratio<N, T>
 }
 
-/**
- * A ratio between to values.
- */
 internal data class SimpleRatio<N, D>(
     override val numerator: N,
     override val denominator: D,

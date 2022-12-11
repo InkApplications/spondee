@@ -37,4 +37,3 @@ val Mired = 1.mireds
  * Convert a color temperature to Mireds.
  */
 fun ColorTemperature.toMireds() = toKelvin().convert { 1_000_000.0 / this }.mireds
-
