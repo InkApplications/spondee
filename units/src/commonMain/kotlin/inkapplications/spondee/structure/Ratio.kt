@@ -70,7 +70,7 @@ fun <N: Dimension<N>, D: Dimension<D>> Ratio<N, Square<D>>.value(
  * Compute the value for ratio with a simple denominator.
  */
 @JvmName("simpleDenominatorValue")
-fun <N: Dimension<N>> Ratio<N, Number>.value(
+fun <N: Dimension<N>, D: Number> Ratio<N, D>.value(
     numeratorScale: DimensionScale = Nominal,
 ): Double = numerator.value(numeratorScale).toDouble().div(denominator.toDouble())
 
@@ -78,7 +78,7 @@ fun <N: Dimension<N>> Ratio<N, Number>.value(
  * Compute the value for ratio with a simple numerator.
  */
 @JvmName("simpleNumeratorValue")
-fun <D: Dimension<D>> Ratio<Number, D>.value(
+fun <N: Number, D: Dimension<D>> Ratio<N, D>.value(
     denominatorScale: DimensionScale = Nominal,
 ): Double = numerator.toDouble().div(denominator.value(denominatorScale).toDouble())
 
