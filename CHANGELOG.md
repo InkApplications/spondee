@@ -4,6 +4,12 @@ Changes
 1.1.0
 -----
 
+
+### Fixed
+
+ - Fixed speed generic variance issue preventing speeds from being handled
+   properly.
+
 ### Added
 
  - Calculated value methods for `Ratio` classes with Number
