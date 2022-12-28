@@ -1,6 +1,20 @@
 Changes
 =======
 
+1.1.0
+-----
+
+### Added
+
+ - Calculated value methods for `Ratio` classes with Number
+   numerator/denominator values.
+
+### Modified
+
+ - Non-braking change to Ratio value return types; expanded `Number` to `Double`
+   specificity.
+
+
 1.0.0
 -----
 

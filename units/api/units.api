@@ -923,15 +923,20 @@ public abstract interface class inkapplications/spondee/structure/Ratio {
 public final class inkapplications/spondee/structure/RatioKt {
 	public static final fun densityFormat (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;IZZC)Ljava/lang/String;
 	public static synthetic fun densityFormat$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;IZZCILjava/lang/Object;)Ljava/lang/String;
-	public static final fun densityValue (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;)Ljava/lang/Number;
-	public static synthetic fun densityValue$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)Ljava/lang/Number;
+	public static final fun densityValue (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;)D
+	public static synthetic fun densityValue$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)D
 	public static final fun div (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Ratio;
 	public static final fun format (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;IZZC)Ljava/lang/String;
 	public static synthetic fun format$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;IZZCILjava/lang/Object;)Ljava/lang/String;
 	public static final fun per (Ljava/lang/Object;Ljava/lang/Object;)Linkapplications/spondee/structure/Ratio;
 	public static final fun ratioOf (Ljava/lang/Object;Ljava/lang/Object;)Linkapplications/spondee/structure/Ratio;
-	public static final fun value (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;)Ljava/lang/Number;
-	public static synthetic fun value$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)Ljava/lang/Number;
+	public static final fun simpleDenominatorValue (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;)D
+	public static synthetic fun simpleDenominatorValue$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)D
+	public static final fun simpleNumeratorValue (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;)D
+	public static synthetic fun simpleNumeratorValue$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)D
+	public static final fun value (Linkapplications/spondee/structure/Ratio;)D
+	public static final fun value (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;)D
+	public static synthetic fun value$default (Linkapplications/spondee/structure/Ratio;Linkapplications/spondee/structure/DimensionScale;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)D
 }
 
 public final class inkapplications/spondee/structure/Square {

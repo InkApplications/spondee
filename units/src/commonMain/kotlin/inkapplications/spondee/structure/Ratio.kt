@@ -55,7 +55,7 @@ operator fun <N: Dimension<N>, D: Dimension<D>> N.div(denominator: D): Ratio<N, 
 fun <N: Dimension<N>, D: Dimension<D>> Ratio<N, D>.value(
     numeratorScale: DimensionScale = Nominal,
     denominatorScale: DimensionScale = Nominal,
-): Number = numerator.value(scale = numeratorScale).toDouble().div(denominator.value(scale = denominatorScale).toDouble())
+): Double = numerator.value(scale = numeratorScale).toDouble().div(denominator.value(scale = denominatorScale).toDouble())
 
 /**
  * Get the raw value of a dimension ratio per unit area.
@@ -64,7 +64,28 @@ fun <N: Dimension<N>, D: Dimension<D>> Ratio<N, D>.value(
 fun <N: Dimension<N>, D: Dimension<D>> Ratio<N, Square<D>>.value(
     numeratorScale: DimensionScale = Nominal,
     denominatorScale: DimensionScale = Nominal,
-): Number = numerator.value(scale = numeratorScale).toDouble().div(denominator.value.value(denominatorScale).toDouble().pow(2))
+): Double = numerator.value(scale = numeratorScale).toDouble().div(denominator.value.value(denominatorScale).toDouble().pow(2))
+
+/**
+ * Compute the value for ratio with a simple denominator.
+ */
+@JvmName("simpleDenominatorValue")
+fun <N: Dimension<N>> Ratio<N, Number>.value(
+    numeratorScale: DimensionScale = Nominal,
+): Double = numerator.value(numeratorScale).toDouble().div(denominator.toDouble())
+
+/**
+ * Compute the value for ratio with a simple numerator.
+ */
+@JvmName("simpleNumeratorValue")
+fun <D: Dimension<D>> Ratio<Number, D>.value(
+    denominatorScale: DimensionScale = Nominal,
+): Double = numerator.toDouble().div(denominator.value(denominatorScale).toDouble())
+
+/**
+ * Compute the value for a simple number ratio.
+ */
+fun Ratio<Number, Number>.value(): Double = numerator.toDouble().div(denominator.toDouble())
 
 /**
  * Format a ratio of dimensions into a string.
