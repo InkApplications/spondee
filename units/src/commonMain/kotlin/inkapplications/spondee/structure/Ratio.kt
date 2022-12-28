@@ -85,7 +85,7 @@ fun <N: Number, D: Dimension<D>> Ratio<N, D>.value(
 /**
  * Compute the value for a simple number ratio.
  */
-fun Ratio<Number, Number>.value(): Double = numerator.toDouble().div(denominator.toDouble())
+fun <N: Number, D: Number> Ratio<N, D>.value(): Double = numerator.toDouble().div(denominator.toDouble())
 
 /**
  * Format a ratio of dimensions into a string.

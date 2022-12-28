@@ -11,6 +11,14 @@ class RatioTest {
     }
 
     @Test
+    fun calculatedValues() {
+        assertEquals(.5, ratioOf(1, 2).value(), 1e-15)
+        assertEquals(.5, ratioOf(TestDimension(1), 2).value(), 1e-15)
+        assertEquals(.5, ratioOf(1, TestDimension(2)).value(), 1e-15)
+        assertEquals(.5, ratioOf(TestDimension(1), TestDimension(2)).value(), 1e-15)
+    }
+
+    @Test
     fun testFormat() {
         val value = TestDimension(10) per TestDimension(2)
 
