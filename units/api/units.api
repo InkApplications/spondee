@@ -143,6 +143,11 @@ public final class inkapplications/spondee/measure/metric/Grams : inkapplication
 	public static fun withValue-GCFqHr8 (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
 }
 
+public final class inkapplications/spondee/measure/metric/IrradianceKt {
+	public static final fun getWattsPerSquareMeter (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
+	public static final fun toWattsPerSquareMeter (Linkapplications/spondee/structure/Ratio;)Linkapplications/spondee/structure/Ratio;
+}
+
 public final class inkapplications/spondee/measure/metric/Kelvin : inkapplications/spondee/measure/ColorTemperature, inkapplications/spondee/measure/Temperature, inkapplications/spondee/structure/Dimension, inkapplications/spondee/structure/Symbolized {
 	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/metric/Kelvin;
 	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;

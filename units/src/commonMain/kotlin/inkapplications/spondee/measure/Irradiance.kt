@@ -6,4 +6,4 @@ import inkapplications.spondee.structure.Square
 /**
  * Unit of power density by area.
  */
-typealias Irradiance = Ratio<Power, Square<Length>>
+typealias Irradiance = Ratio<out Power, out Square<out Length>>
