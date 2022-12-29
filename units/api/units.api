@@ -283,6 +283,8 @@ public final class inkapplications/spondee/measure/metric/PressuresKt {
 public final class inkapplications/spondee/measure/metric/SpeedsKt {
 	public static final fun getKilometersPerHour (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
 	public static final fun getMetersPerSecond (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
+	public static final fun toKilometersPerHourValue (Linkapplications/spondee/structure/Ratio;)D
+	public static final fun toMetersPerSecondValue (Linkapplications/spondee/structure/Ratio;)D
 }
 
 public final class inkapplications/spondee/measure/metric/TemperaturesKt {
@@ -616,6 +618,8 @@ public final class inkapplications/spondee/measure/us/ShortTons : inkapplication
 public final class inkapplications/spondee/measure/us/SpeedsKt {
 	public static final fun getFeetPerSecond (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
 	public static final fun getMilesPerHour (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
+	public static final fun toFeetPerSecondValue (Linkapplications/spondee/structure/Ratio;)D
+	public static final fun toMilesPerHourValue (Linkapplications/spondee/structure/Ratio;)D
 }
 
 public final class inkapplications/spondee/measure/us/TemperaturesKt {

@@ -12,8 +12,9 @@ Changes
 
 ### Added
 
- - Calculated value methods for `Ratio` classes with Number
+ - Calculated `value()`` methods for `Ratio` classes with Number
    numerator/denominator values.
+ - Methods to calculate various Speed values. eg. `toMilesPerHourValue()`.
 
 ### Modified
 
