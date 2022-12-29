@@ -5,7 +5,7 @@ import inkapplications.spondee.format.formatDecimal
 /**
  * Wraps a dimension to form a square area dimension.
  */
-data class Square<T>(val value: T) {
+data class Square<out T>(val value: T) {
     override fun toString(): String = "($value)^2"
 }
 

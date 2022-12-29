@@ -1,6 +1,14 @@
 Changes
 =======
 
+1.1.1
+-----
+
+### Fixed
+
+ - Fix generic variance issue on `Ratio` and `Square` class definitions
+   preventing inheritance.
+
 1.1.0
 -----
 
@@ -12,7 +20,7 @@ Changes
 
 ### Added
 
- - Calculated `value()`` methods for `Ratio` classes with Number
+ - Calculated `value()` methods for `Ratio` classes with Number
    numerator/denominator values.
  - Methods to calculate various Speed values. eg. `toMilesPerHourValue()`.
  - Convenience methods for creating common irradiance values of `W/m^2` via

@@ -7,7 +7,7 @@ import kotlin.math.pow
 /**
  * A ratio between to values.
  */
-interface Ratio<N, D> {
+interface Ratio<out N, out D> {
     val numerator: N
     val denominator: D
 
