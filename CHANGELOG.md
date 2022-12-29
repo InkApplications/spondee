@@ -15,6 +15,8 @@ Changes
  - Calculated `value()`` methods for `Ratio` classes with Number
    numerator/denominator values.
  - Methods to calculate various Speed values. eg. `toMilesPerHourValue()`.
+ - Convenience methods for creating common irradiance values of `W/m^2` via
+   `Number.wattsPerSquareMeter` and `Irradiance.toWattsPerSquareMeter`
 
 ### Modified
 
