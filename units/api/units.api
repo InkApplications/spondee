@@ -424,6 +424,35 @@ public final class inkapplications/spondee/measure/us/Inches : inkapplications/s
 	public static fun withValue-hzUZNrI (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
 }
 
+public final class inkapplications/spondee/measure/us/Knots : inkapplications/spondee/structure/Dimension, inkapplications/spondee/structure/Ratio {
+	public static final synthetic fun box-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/us/Knots;
+	public static fun constructor-impl (Ljava/lang/Number;)Ljava/lang/Number;
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun equals-impl (Ljava/lang/Number;Ljava/lang/Object;)Z
+	public static final fun equals-impl0 (Ljava/lang/Number;Ljava/lang/Number;)Z
+	public synthetic fun getDenominator ()Ljava/lang/Object;
+	public fun getDenominator-YKIs-vY ()J
+	public static fun getDenominator-YKIs-vY (Ljava/lang/Number;)J
+	public fun getNumerator ()Linkapplications/spondee/measure/Length;
+	public synthetic fun getNumerator ()Ljava/lang/Object;
+	public static fun getNumerator-impl (Ljava/lang/Number;)Linkapplications/spondee/measure/Length;
+	public fun getSymbol ()Ljava/lang/String;
+	public static fun getSymbol-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun getValue ()Ljava/lang/Number;
+	public fun hashCode ()I
+	public static fun hashCode-impl (Ljava/lang/Number;)I
+	public fun toString ()Ljava/lang/String;
+	public static fun toString-impl (Ljava/lang/Number;)Ljava/lang/String;
+	public fun transformDenominator (Lkotlin/jvm/functions/Function1;)Linkapplications/spondee/structure/Ratio;
+	public static fun transformDenominator-impl (Ljava/lang/Number;Lkotlin/jvm/functions/Function1;)Linkapplications/spondee/structure/Ratio;
+	public fun transformNumerator (Lkotlin/jvm/functions/Function1;)Linkapplications/spondee/structure/Ratio;
+	public static fun transformNumerator-impl (Ljava/lang/Number;Lkotlin/jvm/functions/Function1;)Linkapplications/spondee/structure/Ratio;
+	public final synthetic fun unbox-impl ()Ljava/lang/Number;
+	public synthetic fun withValue (Ljava/lang/Number;)Ljava/lang/Object;
+	public fun withValue-4vzBxHI (Ljava/lang/Number;)Ljava/lang/Number;
+	public static fun withValue-4vzBxHI (Ljava/lang/Number;Ljava/lang/Number;)Ljava/lang/Number;
+}
+
 public final class inkapplications/spondee/measure/us/LengthsKt {
 	public static final fun getFeet (Ljava/lang/Number;)Ljava/lang/Number;
 	public static final fun getFoot ()Ljava/lang/Number;
@@ -622,8 +651,11 @@ public final class inkapplications/spondee/measure/us/ShortTons : inkapplication
 
 public final class inkapplications/spondee/measure/us/SpeedsKt {
 	public static final fun getFeetPerSecond (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
+	public static final fun getKnot ()Ljava/lang/Number;
+	public static final fun getKnots (Ljava/lang/Number;)Ljava/lang/Number;
 	public static final fun getMilesPerHour (Ljava/lang/Number;)Linkapplications/spondee/structure/Ratio;
 	public static final fun toFeetPerSecondValue (Linkapplications/spondee/structure/Ratio;)D
+	public static final fun toKnots (Linkapplications/spondee/structure/Ratio;)Ljava/lang/Number;
 	public static final fun toMilesPerHourValue (Linkapplications/spondee/structure/Ratio;)D
 }
 
@@ -861,19 +893,31 @@ public abstract interface class inkapplications/spondee/structure/Dimension : in
 public final class inkapplications/spondee/structure/DimensionKt {
 	public static final fun compareTo (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)I
 	public static final fun compareTo (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)I
+	public static final fun compareTo (Ljava/lang/Number;Linkapplications/spondee/structure/Dimension;)I
 	public static final fun convert (Linkapplications/spondee/structure/Dimension;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
 	public static final fun div (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun div (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun div (Ljava/lang/Number;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun format (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;IZZC)Ljava/lang/String;
 	public static synthetic fun format$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;IZZCILjava/lang/Object;)Ljava/lang/String;
 	public static final fun minus (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun minus (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun minus (Ljava/lang/Number;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun plus (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun plus (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun plus (Ljava/lang/Number;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun rem (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun rem (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun rem (Ljava/lang/Number;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
+	public static final fun roundToInt (Linkapplications/spondee/structure/Dimension;)I
+	public static final fun roundToLong (Linkapplications/spondee/structure/Dimension;)J
 	public static final fun times (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun times (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
+	public static final fun times (Ljava/lang/Number;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
+	public static final fun toDouble (Linkapplications/spondee/structure/Dimension;)D
+	public static final fun toFloat (Linkapplications/spondee/structure/Dimension;)F
+	public static final fun toInt (Linkapplications/spondee/structure/Dimension;)I
+	public static final fun toLong (Linkapplications/spondee/structure/Dimension;)J
 	public static final fun value (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;)Ljava/lang/Number;
 	public static synthetic fun value$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)Ljava/lang/Number;
 }

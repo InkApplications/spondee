@@ -7,6 +7,7 @@ Changes
 ### Added
 
  - Expanded operators for math and number conversions on `Dimension` units.
+ - Dedicated `Knots` unit for speed.
 
 1.1.1
 -----
