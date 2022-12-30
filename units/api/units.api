@@ -909,15 +909,21 @@ public final class inkapplications/spondee/structure/DimensionKt {
 	public static final fun rem (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun rem (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
 	public static final fun rem (Ljava/lang/Number;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
-	public static final fun roundToInt (Linkapplications/spondee/structure/Dimension;)I
-	public static final fun roundToLong (Linkapplications/spondee/structure/Dimension;)J
+	public static final fun roundToInt (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;)I
+	public static synthetic fun roundToInt$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)I
+	public static final fun roundToLong (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;)J
+	public static synthetic fun roundToLong$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)J
 	public static final fun times (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
 	public static final fun times (Linkapplications/spondee/structure/Dimension;Ljava/lang/Number;)Linkapplications/spondee/structure/Dimension;
 	public static final fun times (Ljava/lang/Number;Linkapplications/spondee/structure/Dimension;)Linkapplications/spondee/structure/Dimension;
-	public static final fun toDouble (Linkapplications/spondee/structure/Dimension;)D
-	public static final fun toFloat (Linkapplications/spondee/structure/Dimension;)F
-	public static final fun toInt (Linkapplications/spondee/structure/Dimension;)I
-	public static final fun toLong (Linkapplications/spondee/structure/Dimension;)J
+	public static final fun toDouble (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;)D
+	public static synthetic fun toDouble$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)D
+	public static final fun toFloat (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;)F
+	public static synthetic fun toFloat$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)F
+	public static final fun toInt (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;)I
+	public static synthetic fun toInt$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)I
+	public static final fun toLong (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;)J
+	public static synthetic fun toLong$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)J
 	public static final fun value (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;)Ljava/lang/Number;
 	public static synthetic fun value$default (Linkapplications/spondee/structure/Dimension;Linkapplications/spondee/structure/DimensionScale;ILjava/lang/Object;)Ljava/lang/Number;
 }

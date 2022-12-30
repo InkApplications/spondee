@@ -1,6 +1,13 @@
 Changes
 =======
 
+1.3.0
+-----
+
+### Added
+
+ - Add a scaling argument to numerical conversion operator on `Dimension` units.
+
 1.2.0
 -----
 

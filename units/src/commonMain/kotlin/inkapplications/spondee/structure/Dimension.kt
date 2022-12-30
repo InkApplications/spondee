@@ -48,12 +48,12 @@ operator fun <T: Dimension<T>> T.times(other: T) = value.toDouble().times(other.
 operator fun <T: Dimension<T>> T.div(other: T) = value.toDouble().div(other.value.toDouble()).let(::withValue)
 operator fun <T: Dimension<T>> T.compareTo(other: T) = value.toDouble().compareTo(other.value.toDouble())
 
-fun <T: Dimension<T>> T.toDouble() = value.toDouble()
-fun <T: Dimension<T>> T.toFloat() = value.toFloat()
-fun <T: Dimension<T>> T.toInt() = value.toInt()
-fun <T: Dimension<T>> T.toLong() = value.toLong()
-fun <T: Dimension<T>> T.roundToInt() = value.toDouble().roundToInt()
-fun <T: Dimension<T>> T.roundToLong() = value.toDouble().roundToLong()
+fun <T: Dimension<T>> T.toDouble(scale: DimensionScale = Nominal) = value(scale).toDouble()
+fun <T: Dimension<T>> T.toFloat(scale: DimensionScale = Nominal) = value(scale).toFloat()
+fun <T: Dimension<T>> T.toInt(scale: DimensionScale = Nominal) = value(scale).toInt()
+fun <T: Dimension<T>> T.toLong(scale: DimensionScale = Nominal) = value(scale).toLong()
+fun <T: Dimension<T>> T.roundToInt(scale: DimensionScale = Nominal) = value(scale).toDouble().roundToInt()
+fun <T: Dimension<T>> T.roundToLong(scale: DimensionScale = Nominal) = value(scale).toDouble().roundToLong()
 
 inline fun <T: Dimension<T>, R> T.convert(transform: Double.() -> R): R {
     return value.toDouble().run(transform)
