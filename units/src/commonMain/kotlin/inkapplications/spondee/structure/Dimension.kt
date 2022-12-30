@@ -1,6 +1,8 @@
 package inkapplications.spondee.structure
 
 import inkapplications.spondee.format.formatDecimal
+import kotlin.math.roundToInt
+import kotlin.math.roundToLong
 
 /**
  * A concrete dimension value.
@@ -32,12 +34,26 @@ operator fun <T: Dimension<T>> T.times(other: Number) = value.toDouble().times(o
 operator fun <T: Dimension<T>> T.div(other: Number) = value.toDouble().div(other.toDouble()).let(::withValue)
 operator fun <T: Dimension<T>> T.compareTo(other: Number) = value.toDouble().compareTo(other.toDouble())
 
+operator fun <T: Dimension<T>> Number.plus(other: T) = toDouble().plus(other.value.toDouble()).let { other.withValue(it) }
+operator fun <T: Dimension<T>> Number.minus(other: T) = toDouble().minus(other.value.toDouble()).let { other.withValue(it) }
+operator fun <T: Dimension<T>> Number.rem(other: T) = toDouble().rem(other.value.toDouble()).let { other.withValue(it) }
+operator fun <T: Dimension<T>> Number.times(other: T) = toDouble().times(other.value.toDouble()).let { other.withValue(it) }
+operator fun <T: Dimension<T>> Number.div(other: T) = toDouble().div(other.value.toDouble()).let { other.withValue(it) }
+operator fun <T: Dimension<T>> Number.compareTo(other: T) = toDouble().compareTo(other.value.toDouble())
+
 operator fun <T: Dimension<T>> T.plus(other: T) = value.toDouble().plus(other.value.toDouble()).let(::withValue)
 operator fun <T: Dimension<T>> T.minus(other: T) = value.toDouble().minus(other.value.toDouble()).let(::withValue)
 operator fun <T: Dimension<T>> T.rem(other: T) = value.toDouble().rem(other.value.toDouble()).let(::withValue)
 operator fun <T: Dimension<T>> T.times(other: T) = value.toDouble().times(other.value.toDouble()).let(::withValue)
 operator fun <T: Dimension<T>> T.div(other: T) = value.toDouble().div(other.value.toDouble()).let(::withValue)
 operator fun <T: Dimension<T>> T.compareTo(other: T) = value.toDouble().compareTo(other.value.toDouble())
+
+fun <T: Dimension<T>> T.toDouble() = value.toDouble()
+fun <T: Dimension<T>> T.toFloat() = value.toFloat()
+fun <T: Dimension<T>> T.toInt() = value.toInt()
+fun <T: Dimension<T>> T.toLong() = value.toLong()
+fun <T: Dimension<T>> T.roundToInt() = value.toDouble().roundToInt()
+fun <T: Dimension<T>> T.roundToLong() = value.toDouble().roundToLong()
 
 inline fun <T: Dimension<T>, R> T.convert(transform: Double.() -> R): R {
     return value.toDouble().run(transform)

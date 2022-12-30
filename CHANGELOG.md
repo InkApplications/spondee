@@ -1,6 +1,13 @@
 Changes
 =======
 
+1.2.0
+-----
+
+### Added
+
+ - Expanded operators for math and number conversions on `Dimension` units.
+
 1.1.1
 -----
 
