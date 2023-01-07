@@ -8,6 +8,9 @@ Changes
 
  - Add a scaling argument to numerical conversion operator on `Dimension` units.
 
+### Fixed
+ - Fix for JS IR support
+
 1.2.0
 -----
 

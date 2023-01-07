@@ -43,7 +43,7 @@ kotlin {
         nodejs()
         d8()
     }
-    js {
+    js(BOTH) {
         nodejs()
         browser()
     }
