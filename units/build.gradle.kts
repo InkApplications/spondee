@@ -1,4 +1,15 @@
 plugins {
-    id("ink.multiplatform")
-    id("com.inkapplications.publishing")
+    id("ink.publishing")
+    id("multiplatform.tier3")
+}
+
+kotlin {
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation(kotlin("test"))
+                implementation(kotlin("test-annotations-common"))
+            }
+        }
+    }
 }
