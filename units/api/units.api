@@ -783,6 +783,7 @@ public final class inkapplications/spondee/spatial/Cardinal : java/lang/Enum {
 	public static final field North Linkapplications/spondee/spatial/Cardinal;
 	public static final field South Linkapplications/spondee/spatial/Cardinal;
 	public static final field West Linkapplications/spondee/spatial/Cardinal;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public final fun getSymbol ()C
 	public fun toString ()Ljava/lang/String;
 	public static fun valueOf (Ljava/lang/String;)Linkapplications/spondee/spatial/Cardinal;

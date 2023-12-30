@@ -10,5 +10,11 @@ jobs:
                 name: Checkout
                 uses: actions/checkout@v2.3.4
             -
-                name: JVM Tests
-                run: ./gradlew jvmTest apiCheck
+                name: Configure Java
+                uses: actions/setup-java@v4.0.0
+                with:
+                    java-version: 17
+                    distribution: oracle
+            -
+                name: Tests
+                run: ./gradlew check

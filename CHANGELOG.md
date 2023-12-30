@@ -1,6 +1,14 @@
 Changes
 =======
 
+1.4.0
+-----
+
+### Added
+
+ - Full support for 3 tiers of multiplatform targets.
+ - Update to Kotlin 1.9
+
 1.3.0
 -----
 

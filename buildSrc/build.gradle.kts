@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("gradle-plugin", "1.7.21"))
-    implementation("com.inkapplications.publishing:ink-publishing:1.0.0")
-    implementation("org.jetbrains.kotlinx:binary-compatibility-validator:0.12.1")
+    implementation(kotlin("gradle-plugin", "1.9.21"))
+    implementation("org.jetbrains.kotlinx:binary-compatibility-validator:0.13.2")
+    implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.9.10")
 }
