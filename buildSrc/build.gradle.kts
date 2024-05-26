@@ -6,6 +6,10 @@ repositories {
     gradlePluginPortal()
 }
 
+kotlin {
+    jvmToolchain(11)
+}
+
 dependencies {
     implementation(libs.kotlin.gradle)
     implementation(libs.dokka)
